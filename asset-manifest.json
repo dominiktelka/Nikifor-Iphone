@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.32f44cc6.css",
+    "main.js": "./static/js/main.4b3cbdfb.js",
+    "static/media/Ink - 21536.mp4": "./static/media/Ink - 21536.210aa2b7cb71aa6ce53f.mp4",
+    "static/media/Skate - 49791.mp4": "./static/media/Skate - 49791.79b13830ad762a9ccb26.mp4",
+    "static/media/Scuba Diving - 699.mp4": "./static/media/Scuba Diving - 699.75e8d3961b352cb4aa0c.mp4",
+    "static/media/A15-Bionic.jpg": "./static/media/A15-Bionic.11a7ad65d27c4f1d060d.jpg",
+    "index.html": "./index.html",
+    "main.32f44cc6.css.map": "./static/css/main.32f44cc6.css.map",
+    "main.4b3cbdfb.js.map": "./static/js/main.4b3cbdfb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32f44cc6.css",
+    "static/js/main.4b3cbdfb.js"
+  ]
+}
