@@ -1,0 +1,33 @@
+.mainContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+
+    ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    /*pointer-events: none;*/
+}
+
+.mainContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    /*background-color: pink;*/
+    /*outline: solid red 5px;*/
+    /*outline-offset: -5px;*/
+}

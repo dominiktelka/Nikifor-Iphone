@@ -1,0 +1,70 @@
+.videoContainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+.video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom;
+    overflow: hidden;
+}
+.title{
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    font-size: 36px;
+    color: lightgray;
+}
+.title2{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.title2 span{
+    text-transform: uppercase;
+    font-weight:600;
+    font-size: 80px;
+}
+
+@media (max-width: 767px) {
+    .title2 span {
+        font-size: 24px;
+    }
+    .title2 span:first-child {
+        margin-top: 10vh;
+    }
+    .title2 span:nth-child(2) {
+        align-self: flex-end;
+        margin-bottom: 10vh;
+    }
+
+    .title2 {
+        flex-direction: column;
+        background-image: linear-gradient(90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        align-items: flex-start;
+        filter: brightness(1.1);
+    }
+    .title{
+        font-size: 22px;
+        top: 1rem;
+        left: 8rem;
+    }
+
+}
+
+
+/* Style dla urządzeń tabletów */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .title2 span {
+        font-size: 32px;
+    }
+}

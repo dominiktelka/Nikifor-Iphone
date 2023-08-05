@@ -1,0 +1,10 @@
+.mainContainer{
+    background-color: black;
+}
+.stripe {
+    position: absolute;
+    overflow: hidden;
+    /*transition-duration: 1s;*/
+}
+
+

@@ -1,0 +1,95 @@
+.textContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+.text{
+    width:90%;
+    position: relative;
+    overflow: hidden;
+    font-size: 28px;
+    text-align: center;
+}
+.text:nth-child(5) {
+    transform: translateX(13vw);
+}
+.text span {
+    display: inline-block; /* Dodajemy display: inline-block, aby animacja translateY zadziałała */
+    transform: translateY(3rem);
+    animation: fadeInAnimation 2.5s ease forwards; /* Skróciliśmy styl animacji */
+    background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .text {
+        font-size: 35px;
+        text-align: center;
+        width: 90%;
+    }
+    .text:nth-child(5) {
+        transform: translateX(25vw);
+    }
+}
+@media (max-width: 767px) {
+    .text {
+        font-size: 20px;
+        text-align: center;
+        width: 90%;
+    }
+    .text span {
+        transform: translateY(5rem);
+    }
+    .text:nth-child(5) {
+        transform: translateX(25vw);
+    }
+}
+
+/* Style dla urządzeń tabletów */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text {
+        font-size: 24px;
+        text-align: center;
+        width: 80%;
+    }
+    .text span {
+        transform: translateY(3rem);
+    }
+    .text:nth-child(5) {
+        transform: translateX(25vw);
+    }
+}
+
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Zmieniamy transformację translateY na 0, aby elementy pojawiały się z dolu */
+    }
+}
+
+/* Zwiększamy opóźnienia dla każdego elementu <p> */
+.text:nth-child(1) span {
+    animation-delay: 0s;
+}
+
+.text:nth-child(2) span {
+    animation-delay: 0.5s;
+}
+
+.text:nth-child(3) span {
+    animation-delay: 1s;
+}
+
+.text:nth-child(4) span {
+    animation-delay: 1.5s;
+}
+
+.text:nth-child(5) span {
+    animation-delay: 2s;
+}

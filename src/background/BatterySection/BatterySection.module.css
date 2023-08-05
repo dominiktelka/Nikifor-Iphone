@@ -1,0 +1,61 @@
+.section{
+    width:100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.section h1{
+    position: absolute;
+    top: 35vh;
+    left: 40vw;
+    text-transform: capitalize;
+    font-size: 70px;
+    color: lightgray;
+    width: 30vw;
+}
+
+
+.battery{
+    position: absolute;
+    right:4rem;
+    list-style: none;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 15rem;
+}
+
+.battery li{
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    background-image: linear-gradient(-90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+    opacity: 0;
+    margin: 0.5rem 0;
+}
+
+.battery li.active{
+    animation: fadeIn infinite ease forwards;
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    background-image: linear-gradient(-90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+

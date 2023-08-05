@@ -1,0 +1,83 @@
+.section{
+    width:100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.title{
+    position: absolute;
+    top: 10vh;
+    left:6vw;
+    font-size:50px;
+    background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+}
+
+.textBlockLeft{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 0;
+    width: 50%;
+}
+
+.textBlockLeft h2{
+    color: white;
+    font-size: 28px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+
+.textBlockLeft p {
+    font-size: 18px;
+    color: lightgray;
+    width:100%;
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 24px;
+        top: 5vh;
+        left: 25vw;
+    }
+
+    .textBlockLeft {
+        width: 90%;
+        bottom: 5vh;
+    }
+
+    .textBlockLeft h2 {
+        font-size: 24px;
+    }
+
+    .textBlockLeft p {
+        font-size: 16px;
+    }
+}
+
+/* Style dla urządzeń o szerokości mniejszej niż 1024px (np. tablety w orientacji pionowej) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .title {
+        font-size: 26px;
+        left: 11vw;
+    }
+
+    .textBlockLeft {
+        width: 80%;
+    }
+
+    .textBlockLeft h2 {
+        font-size: 26px;
+    }
+
+    .textBlockLeft p {
+        font-size: 17px;
+    }
+}

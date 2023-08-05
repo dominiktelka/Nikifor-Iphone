@@ -1,0 +1,22 @@
+.test{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+    align-content: center;
+}
+
+/*h1{*/
+/*    position:absolute;*/
+/*    margin: 0 auto;*/
+/*    top: 5rem;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%,0);*/
+/*    font-size:24px;*/
+/*    color: lightgray;*/
+/*}*/
+

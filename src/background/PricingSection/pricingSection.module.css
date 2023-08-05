@@ -1,0 +1,115 @@
+ .pricingSection{
+     width: 100vw;
+     height: 100vh;
+     position: relative;
+ }
+
+
+.Colors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 35%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    pointer-events: all;
+    z-index: 1;
+}
+
+
+.colorButton{
+    list-style: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    /*background-color: ${(props) => props.color};*/
+    margin: 0.5rem 0;
+    border: 1px solid black;
+
+}
+.colorButton:hover{
+    transform: scale(1.5);
+}
+.colorButton:nth-child(1){
+    background-color: #9BB5CE;
+}
+ .colorButton:nth-child(2){
+     background-color: #F9E5C9;
+ }
+ .colorButton:nth-child(3){
+     background-color: #505F4E;
+ }
+ .colorButton:nth-child(4){
+     background-color: #574f6f;
+ }
+ .colorButton:nth-child(5){
+     background-color: #A50011;
+ }
+ .colorButton:nth-child(6){
+     background-color: #215E7C;
+ }
+
+
+.details{
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 30px;
+    padding: 0.3rem;
+    color: whitesmoke;
+}
+.subtitle {
+    font-size: 24px;
+    color: whitesmoke;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+
+    border: none;
+    outline: none;
+
+    background-color: whitesmoke;
+    color: #0071e3;
+    cursor: pointer;
+}
+
+.btnLink{
+    color: #0071e3;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+.btnLink:hover {
+     text-decoration: underline;
+ }
+
+.indicatorText{
+    font-size: 24px;
+    position: absolute;
+    top: 10vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+
+}
