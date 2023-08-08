@@ -11,6 +11,7 @@ const PricingSection = () => {
 
     useEffect(() => {
         sectionRef.current.style.backgroundColor = `rgba(${currentColor.rgbColor},0.8)`;
+
     }, [currentColor]);
 
 
@@ -24,8 +25,8 @@ const PricingSection = () => {
     };
 
     return (
-            <div className={styles.pricingSection} ref={sectionRef}>
-                <div className={styles.indicatorText}>360&deg; &#x27F2; </div>
+            <div className={`${styles.pricingSection}`} ref={sectionRef}>
+                {/*<div className={styles.indicatorText}>360&deg; &#x27F2; </div>*/}
                     <ul className={styles.Colors}>
                         <button className={styles.colorButton} onClick={() => updateColor("#9BB5CE", "Sierra Blue", "155, 181, 206")}/>
                         <button className={styles.colorButton} onClick={() => updateColor("#e0ca9b", "Gold", "249, 229, 201")}/>

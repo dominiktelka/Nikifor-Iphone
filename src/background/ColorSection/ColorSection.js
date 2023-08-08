@@ -18,6 +18,8 @@ const ColorSection = ({ currentSection }) => {
         textElem.innerText = currentColor.text;
         rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.4)`;
         leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
+
+
     }, [currentColor]);
 
 

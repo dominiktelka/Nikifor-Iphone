@@ -1,10 +1,11 @@
 .mainContainer{
     background-color: black;
+    pointer-events: all;
 }
 .stripe {
     position: absolute;
     overflow: hidden;
-    /*transition-duration: 1s;*/
+    /*transition-duration: 3s;*/
 }
 
 

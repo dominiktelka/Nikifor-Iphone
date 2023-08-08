@@ -12,69 +12,44 @@ import ColorSection from "./ColorSection/ColorSection";
 import {useContext, useState} from "react";
 import CameraSection from "./CameraSection/CameraSection";
 import PricingSection from "./PricingSection/PricingSection";
-import SmoothColorTransition from "../hooks/SmoothColorTransition";
 
-export default function Background({ scrollPercentage,sectionsAmount }) {
+export default function Background({ currentSectionNumber }) {
 
-    const calculateSectionRange = (sectionNumber) => {
-        const sectionPercentage = 100 / sectionsAmount;
-        const startPercentage = (sectionNumber - 1) * sectionPercentage;
-        const endPercentage = sectionNumber * sectionPercentage;
-        return { startPercentage, endPercentage };
-    };
-
-
-    const generateSections = (scrollPercentage) => {
-        let visibleSection = null;
-
-        for (let i = 1; i <= sectionsAmount; i++) {
-            const { startPercentage, endPercentage } = calculateSectionRange(i);
-            if (scrollPercentage >= startPercentage / 100 && scrollPercentage <= endPercentage / 100) {
-                visibleSection = i;
-                break;
-            }
-        }
-        return visibleSection;
-    };
-
-
-
-    const currentSectionNumber = generateSections(scrollPercentage);
 
 
     const sectionsVisible = [8, 9, 10, 11, 12, 13].includes(currentSectionNumber);
 
     return (
         <>
-            <div className={styles.stripe} style={{ height: `${currentSectionNumber === 1 ? 100 : 0}vh`, width: `${currentSectionNumber === 1 ? 100 : 0}vw` }}>
+            <div className={styles.stripe} style={{ height: `${currentSectionNumber === 1 ? 100 : 0}vh`, width:'100vw', opacity:1 }}>
                 <QuoteSection/>
             </div>
-            <div className={styles.stripe} style={{height: `${currentSectionNumber === 2 ? 100 : 0}vh`, width: `${currentSectionNumber === 2 ? 100 : 0}vw`}}>
+            <div className={styles.stripe} style={{height: `${currentSectionNumber === 2 ? 100 : 0}vh`, width:'100vw'}}>
                 <HeroSection/>
             </div>
-            <div className={styles.stripe} style={{height: `${currentSectionNumber === 3 ? 100 : 0}vh`, width: `${currentSectionNumber === 3 ? 100 : 0}vw` }}>
+            <div className={styles.stripe} style={{height: `${currentSectionNumber === 3 ? 100 : 0}vh`, width:'100vw'}}>
                 <DesignSection currentSectionNumber={currentSectionNumber}/>
             </div>
-            <div className={styles.stripe} style={{height: `${currentSectionNumber === 4 ? 100 : 0}vh`, width: `${currentSectionNumber === 4 ? 100 : 0}vw` }}>
+            <div className={styles.stripe} style={{height: `${currentSectionNumber === 4 ? 100 : 0}vh`, width:'100vw' }}>
                 <DisplaySection/>
             </div>
-            <div className={styles.stripe} style={{height: `${currentSectionNumber === 5 ? 100 : 0}vh`, width: `${currentSectionNumber === 5 ? 100 : 0}vw` }}>
+            <div className={styles.stripe} style={{height: `${currentSectionNumber === 5 ? 100 : 0}vh`, width:'100vw' }}>
                 <SecondDisplaySection/>
             </div>
-            <div className={styles.stripe} style={{height: `${currentSectionNumber === 6 ? 100 : 0}vh`, width: `${currentSectionNumber === 6 ? 100 : 0}vw` }}>
+            <div className={styles.stripe} style={{height: `${currentSectionNumber === 6 ? 100 : 0}vh`, width:'100vw' }}>
                 <ProcessorSection/>
             </div>
-            <div className={styles.stripe} style={{height: `${currentSectionNumber === 7 ? 100 : 0}vh`, width: '100vw'}}>
+            <div className={styles.stripe} style={{height: `${currentSectionNumber === 7 ? 100 : 0}vh`, width:'100vw'}}>
                 <BatterySection/>
             </div>
                 <ColorContextProvider >
-                    <div className={styles.stripe} style={{ height: `${sectionsVisible ? 100 : 0}vh`, width: `${sectionsVisible ? 100 : 0}vw` }}>
+                    <div className={styles.stripe} style={{ height: `${sectionsVisible ? 100 : 0}vh`, width:'100vw' }}>
                         <ColorSection currentSection={currentSectionNumber} />
                     </div>
-                    <div className={styles.stripe} style={{ height: `${currentSectionNumber === 14 ? 100 : 0}vh`, width: `${currentSectionNumber === 14 ? 100 : 0}vw` }}>
+                    <div className={styles.stripe} style={{ height: `${currentSectionNumber === 14 ? 100 : 0}vh`, width:'100vw' }}>
                             <CameraSection currentSectionNumber={currentSectionNumber} />
                     </div>
-                    <div className={styles.stripe} style={{ height: `${currentSectionNumber === 15 ? 100 : 0}vh`, width: `${currentSectionNumber === 15 ? 100 : 0}vw` }}>
+                    <div className={styles.stripe} style={{ height: `${currentSectionNumber === 15 ? 100 : 0}vh`, width:'100vw' }}>
                         <PricingSection />
                     </div>
                 </ColorContextProvider>

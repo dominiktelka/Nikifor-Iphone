@@ -2,6 +2,7 @@
      width: 100vw;
      height: 100vh;
      position: relative;
+     transition: background-color 1.5s ease, opacity 2s ease;
  }
 
 
@@ -14,7 +15,6 @@
     left: 35%;
     top: 45%;
     transform: translate(-50%, -50%);
-    pointer-events: all;
     z-index: 1;
 }
 
@@ -28,6 +28,7 @@
     /*background-color: ${(props) => props.color};*/
     margin: 0.5rem 0;
     border: 1px solid black;
+    transition: transform 0.3s ease;
 
 }
 .colorButton:hover{
