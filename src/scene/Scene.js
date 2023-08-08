@@ -8,18 +8,16 @@ import studio from "@theatre/studio";
 import extension from "@theatre/r3f/dist/extension";
 import * as THREE from "three";
 
-import animatedIphone2 from "./animatedIphone2.json";
-import iphoneAnimation from "./iphoneAnimation.json";
-import latestAnimation from './latestAnimation.json'
+import latest from './latest.json'
 
 
-studio.initialize()
-studio.extend(extension)
+// studio.initialize()
+// studio.extend(extension)
 
 // gl={{preserveDrawingBuffer:true}}
 
-// const demoSheet = getProject("Demo Project", { state: latestAnimation }).sheet("Demo Sheet");
-const demoSheet = getProject('Demo Project').sheet('Demo Sheet')
+const demoSheet = getProject("Demo Project", { state: latest }).sheet("Demo Sheet");
+// const demoSheet = getProject('Demo Project').sheet('Demo Sheet')
 
 
 const Scene = ({ scrollPercentage, isInteractive }) => {
