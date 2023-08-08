@@ -13,7 +13,7 @@
     align-items: center;
     position: absolute;
     left: 35%;
-    top: 45%;
+    top: 50vh;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
@@ -55,29 +55,40 @@
 
 
 .details{
-    width: 100%;
+    width: 50%;
     position: absolute;
-    bottom: 5vh;
+    right: -5vw;
+    top: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+ .animationMoveDown{
+     animation: moveDown 0.5s 1;
+     animation-fill-mode: forwards;
+ }
+ @keyframes moveDown {
+     0%{
+         transform: translateY(-50vh);
+     }
+     100%{
+         transform: translateY(0vh);
+     }
+ }
 
 .title{
-    font-size: 30px;
-    padding: 0.3rem;
+    font-size: 40px;
     color: whitesmoke;
 }
 .subtitle {
-    font-size: 24px;
+    font-size: 40px;
     color: whitesmoke;
 }
 .buttonContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 1rem;
 }
 
 .buy{
@@ -92,25 +103,19 @@
     border: none;
     outline: none;
 
-    background-color: whitesmoke;
-    color: #0071e3;
+    background-color: #0071e3;
+    color: whitesmoke;
     cursor: pointer;
+    z-index: 1;
 }
 
 .btnLink{
     color: #0071e3;
     text-decoration: none;
     margin-left: 1.5rem;
+    z-index: 1;
 }
 .btnLink:hover {
      text-decoration: underline;
  }
 
-.indicatorText{
-    font-size: 24px;
-    position: absolute;
-    top: 10vh;
-    left: 50vw;
-    transform: translate(-50%,-50%);
-
-}

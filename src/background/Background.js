@@ -40,7 +40,7 @@ export default function Background({ currentSectionNumber }) {
                 <ProcessorSection/>
             </div>
             <div className={styles.stripe} style={{height: `${currentSectionNumber === 7 ? 100 : 0}vh`, width:'100vw'}}>
-                <BatterySection/>
+                <BatterySection currentSectionNumber={currentSectionNumber}/>
             </div>
                 <ColorContextProvider >
                     <div className={styles.stripe} style={{ height: `${sectionsVisible ? 100 : 0}vh`, width:'100vw' }}>
@@ -50,7 +50,7 @@ export default function Background({ currentSectionNumber }) {
                             <CameraSection currentSectionNumber={currentSectionNumber} />
                     </div>
                     <div className={styles.stripe} style={{ height: `${currentSectionNumber === 15 ? 100 : 0}vh`, width:'100vw' }}>
-                        <PricingSection />
+                        <PricingSection currentSectionNumber={currentSectionNumber}/>
                     </div>
                 </ColorContextProvider>
             {/*<div className={styles.stripe} style={{height: `${currentSectionNumber === 16 ? 100 : 0}vh`, width: `${currentSectionNumber === 16 ? 100 : 0}vw` }}>*/}

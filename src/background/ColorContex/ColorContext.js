@@ -2,8 +2,6 @@ import {createContext, useState} from "react";
 import {useGLTF} from '@react-three/drei';
 import * as THREE from 'three'
 
-// ColorContext.js
-
 export const ColorContext = createContext({});
 
 export const ColorContextProvider = ({ children }) => {

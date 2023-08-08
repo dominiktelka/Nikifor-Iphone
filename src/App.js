@@ -9,9 +9,10 @@ import LoadingScreen from "./loading-screen/LoadingScreen";
 
 
 function App() {
-    
+
     const [scrollPercentage, setScrollPercentage] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
+
 
     useEffect(() => {
         if (!isLoading) {
@@ -64,9 +65,9 @@ function App() {
                     setScrollPercentage={setScrollPercentage}
 
                 />
-                <button className={styles.button360} style={{zIndex:`${currentSectionNumber === 15 ? 1 : -1}`}}
+                <button className={currentSectionNumber === 15 ? `${styles.button360} ${styles.animationMoveRight}`: '' } style={{opacity:`${currentSectionNumber === 15 ? 1 : 0}`, zIndex:`${currentSectionNumber === 15 ? 2 : -1}` }}
                         onClick={()=>{toggleAnimation()}}>
-                    {isInteractive ? 'Włącz tryb 360' : 'Wyłącz tryb 360'}
+                    {isInteractive ? 'Enable 360' : 'Disable 360'}
                 </button>
 
             </Suspense>

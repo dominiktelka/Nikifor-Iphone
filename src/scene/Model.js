@@ -10,7 +10,7 @@ export function Model({props,isInteractive}) {
 
 
 
-const scaleValue = isInteractive ? 1 :3
+const scaleValue = isInteractive ? 1 :3.5
   return (
     <group {...props} dispose={null}>
       <group >

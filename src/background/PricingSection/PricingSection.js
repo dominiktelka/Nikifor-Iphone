@@ -5,7 +5,7 @@ import {ColorContext} from "../ColorContex/ColorContext";
 
 
 
-const PricingSection = () => {
+const PricingSection = ({currentSectionNumber}) => {
     const sectionRef = useRef(null);
     const { currentColor, changeColorContext } = useContext(ColorContext);
 
@@ -26,7 +26,6 @@ const PricingSection = () => {
 
     return (
             <div className={`${styles.pricingSection}`} ref={sectionRef}>
-                {/*<div className={styles.indicatorText}>360&deg; &#x27F2; </div>*/}
                     <ul className={styles.Colors}>
                         <button className={styles.colorButton} onClick={() => updateColor("#9BB5CE", "Sierra Blue", "155, 181, 206")}/>
                         <button className={styles.colorButton} onClick={() => updateColor("#e0ca9b", "Gold", "249, 229, 201")}/>
@@ -36,7 +35,7 @@ const PricingSection = () => {
                         <button className={styles.colorButton} onClick={() => updateColor("#215E7C", "Blue", "33, 94, 124")}/>
                     </ul>
 
-                <div className={styles.details}>
+                <div className={currentSectionNumber === 15 ? `${styles.details} ${styles.animationMoveDown}`: '' }>
                     <h2 className={styles.subtitle}>iPhone</h2>
                     <h2 className={styles.title}>14 Pro Max</h2>
                     <h2 className={styles.subtitle}>From $1099</h2>

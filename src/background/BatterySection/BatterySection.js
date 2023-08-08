@@ -3,7 +3,7 @@ import styles from './BatterySection.module.css'
 
 
 
-const BatterySection = () => {
+const BatterySection = ({currentSectionNumber}) => {
     const [batteryItemsCount] = useState(5);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -14,11 +14,11 @@ const BatterySection = () => {
 
         return () => clearInterval(interval); // Czyszczenie intervalu, gdy komponent jest odmontowywany
     }, [batteryItemsCount]);
-
+console.log(currentSectionNumber)
     return (
         <section className={styles.section}>
-            <h1>Go all day with single charge...</h1>
-            <ul className={styles.battery}>
+            <h1 className={currentSectionNumber === 7 ? `${styles.batteryH1} ${styles.animation}`: '' }>Go all day with single charge...</h1>
+            <ul className={currentSectionNumber === 7 ? `${styles.battery} ${styles.animationMoveLeft}`: '' }>
                 {Array.from({ length: batteryItemsCount }).map((_, index) => (
                     <li
                         key={index}

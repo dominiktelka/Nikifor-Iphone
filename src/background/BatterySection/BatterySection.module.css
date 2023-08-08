@@ -6,9 +6,17 @@
     justify-content: flex-end;
     align-items: center;
 }
+.animation{
+    animation: moveUp 1s 1;
+    animation-fill-mode: forwards;
+}
+.animationMoveLeft{
+    animation: moveLeft 1s 1;
+    animation-fill-mode: forwards;
+}
 
 
-.section h1{
+.batteryH1{
     position: absolute;
     top: 35vh;
     left: 40vw;
@@ -16,6 +24,22 @@
     font-size: 70px;
     color: lightgray;
     width: 30vw;
+}
+@keyframes moveUp {
+    0%{
+        transform: translateY(50vh);
+    }
+    100%{
+        transform: translateY(-15vh);
+    }
+}
+@keyframes moveLeft {
+    0%{
+        transform: translateX(50vh);
+    }
+    100%{
+        transform: translateX(-15vh);
+    }
 }
 
 
@@ -29,6 +53,7 @@
     padding: 0.5rem;
     width: 15rem;
 }
+
 
 .battery li{
     width: 100%;

@@ -19,12 +19,59 @@
     top: 0;
     left: 0;
     z-index: 1;
+    cursor: pointer;
 }
-.button360{
-    background-color:transparent;
-    border:none;
-    position:absolute;
-    left:43.5vw;
-    top:80px;
-    font-size:36px;
+.button360 {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 10px 20px;
+    position: absolute;
+    left: 43.5vw;
+    bottom: 40px;
+    font-size: 24px;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
+.button360:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-5deg);
+    }
+    20% {
+        transform: rotateZ(5deg);
+    }
+    25% {
+        transform: rotateZ(-5deg);
+    }
+    30% {
+        transform: rotateZ(3deg);
+    }
+    35% {
+        transform: rotateZ(-2deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+.animationMoveRight{
+    animation:  wiggle 2s linear infinite;
+    animation-fill-mode: forwards;
+    /*moveRight 2s 1 deosent work well with wiggle*/
+}
+/*@keyframes moveRight {*/
+/*    0%{*/
+/*        transform: translateX(-50vw);*/
+/*    }*/
+/*    100%{*/
+/*        transform: translateX(0vw);*/
+/*    }*/
+/*}*/

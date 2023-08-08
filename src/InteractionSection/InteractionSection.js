@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react'
 import styles from './interaction.module.css'
-import {Model} from "../gameModel/Model";
+import {Model} from "../scene/Model";
 import {Environment,OrbitControls} from "@react-three/drei";
 import {Canvas} from "@react-three/fiber";
 import DinoGame from "./dinoGame/DinoSection";
