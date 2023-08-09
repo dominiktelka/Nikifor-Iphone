@@ -4,8 +4,7 @@ import * as THREE from 'three'
 
 export const ColorContext = createContext({});
 
-export const ColorContextProvider = ({ children }) => {
-    const { materials } = useGLTF("./scene.gltf");
+export const ColorContextProvider = ({ children,materials }) => {
     const [currentColor, setCurrentColor] = useState({
         color: "#9BB5CE",
         text: "Sierra Blue",

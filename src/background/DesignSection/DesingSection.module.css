@@ -27,7 +27,7 @@
         -webkit-text-fill-color: transparent;
     }
     100% {
-        transform: translateX(-68%) scale(1.6);
+        transform: translateX(-48%) scale(1.6);
         background-image: linear-gradient(90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -35,11 +35,11 @@
 
 }
 .moveLeftToRight {
-    animation: moveLeftToRight 3.5s 1;
+    animation: moveLeftToRight 1s 1;
 }
 
 .moveRightToLeft {
-    animation: moveRightToLeft 3.5s 1;
+    animation: moveRightToLeft 1s 1;
 }
 
 
@@ -75,7 +75,7 @@
         -webkit-text-fill-color: transparent;
     }
     100% {
-        transform: translateX(70%) scale(1.6);
+        transform: translateX(60%) scale(1.6);
         background-image: linear-gradient(90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -85,13 +85,13 @@
 @media (max-width: 767px ){
     @keyframes moveLeftToRight {
         0% {
-            transform: translateX(100%) scale(1);
+            transform: translateX(100%) scale(1.1);
             background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         100% {
-            transform: translateX(-10%) scale(1.1);
+            transform: translate(0%,-40%) scale(0.9);
             background-image: linear-gradient(90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -99,13 +99,13 @@
     }
     @keyframes moveRightToLeft {
         0% {
-            transform: translateX(-100%) scale(1);
+            transform: translateX(-100%) scale(1.1);
             background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         100% {
-            transform: translateX(20%) scale(1.1);
+            transform: translate(0,40%) scale(0.9);
             background-image: linear-gradient(90deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

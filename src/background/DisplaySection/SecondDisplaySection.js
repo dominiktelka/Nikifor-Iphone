@@ -5,10 +5,10 @@ import styles from './displaySection2.module.css'
 
 
 
-const DisplaySection2 = () =>{
+const DisplaySection2 = ({currentSectionNumber}) =>{
 
     return(
-        <section className={styles.section}>
+        <section className={ currentSectionNumber === 5 ? `${styles.animation} ${styles.section}` : ''}>
             <div className={styles.textBlockLeft} >
                 <h2>Big is better</h2>
                 <p>

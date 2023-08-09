@@ -6,12 +6,15 @@ import Background from "./background/Background";
 import InteractionSection from "./InteractionSection/InteractionSection";
 import LoadingUpdater from "./loading-screen/LoadingUpdater";
 import LoadingScreen from "./loading-screen/LoadingScreen";
+import {useGLTF} from "@react-three/drei";
 
 
 function App() {
 
     const [scrollPercentage, setScrollPercentage] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
+    const { nodes, materials } = useGLTF('./scene.gltf')
+    const [isInteractive, setIsInteractive] = useState(true)
 
 
     useEffect(() => {
@@ -19,7 +22,6 @@ function App() {
             setTimeout(() => 1, 100)
         }
     }, [isLoading])
-    const [isInteractive, setIsInteractive] = useState(true)
 
     const toggleAnimation = () => {
         setIsInteractive((prev) => !prev);
@@ -54,10 +56,10 @@ function App() {
             <LoadingScreen isVisible={isLoading}/>
             <Suspense>
                 <LoadingUpdater setIsLoading={setIsLoading}/>
-                <Background scrollPercentage={scrollPercentage} currentSectionNumber={currentSectionNumber}/>
+                <Background currentSectionNumber={currentSectionNumber} nodes={nodes} materials={materials}/>
 
                 <div className={isInteractive ? styles.sceneContainer : styles.sceneContainerActive}>
-                    <Scene scrollPercentage={scrollPercentage} isInteractive={isInteractive} />
+                    <Scene scrollPercentage={scrollPercentage} isInteractive={isInteractive} nodes={nodes} materials={materials}/>
                 </div>
 
                 <ScrollControls

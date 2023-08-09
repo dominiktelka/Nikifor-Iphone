@@ -1,26 +1,38 @@
-import React, { useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
+import React, {useEffect, useState} from "react";
+import { Canvas, useFrame, } from "@react-three/fiber";
+import { Environment, OrbitControls, } from "@react-three/drei";
 import { Model } from "./Model";
 import { getProject } from "@theatre/core";
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from "@theatre/r3f";
+import * as THREE from "three";
+import latest from './latest.json'
+import mobileAnimation from './mobileAnimation.json'
 import studio from "@theatre/studio";
 import extension from "@theatre/r3f/dist/extension";
-import * as THREE from "three";
-
-import latest from './latest.json'
-
 
 // studio.initialize()
 // studio.extend(extension)
-
-// gl={{preserveDrawingBuffer:true}}
-
-const demoSheet = getProject("Demo Project", { state: latest }).sheet("Demo Sheet");
 // const demoSheet = getProject('Demo Project').sheet('Demo Sheet')
+// gl={{preserveDrawingBuffer:true}}
+//
 
 
-const Scene = ({ scrollPercentage, isInteractive }) => {
+
+
+const Scene = ({ scrollPercentage, isInteractive,nodes, materials }) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const demoSheet = getProject("Demo Project", { state: isMobile ? mobileAnimation : latest }).sheet("Demo Sheet");
+
     const canvasProps = isInteractive
         ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
         : { camera: { fov: 60 } };
@@ -30,7 +42,7 @@ const Scene = ({ scrollPercentage, isInteractive }) => {
             <Canvas {...canvasProps}>
                 <ambientLight intensity={1} />
                 <Environment preset="warehouse" />
-                <Model isInteractive={isInteractive}/>
+                <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
                 {isInteractive ? (
                     <SheetProvider sheet={demoSheet}>
                         <ScrollToAnimationPasser scrollPercentage={scrollPercentage} />
@@ -38,7 +50,7 @@ const Scene = ({ scrollPercentage, isInteractive }) => {
                     </SheetProvider>
                 ) : (
                     <>
-                        <OrbitControls minZoom={1} maxZoom={2} />
+                    <OrbitControls enableZoom={false} enablePan={false}/>
                     </>
                 )}
             </Canvas>

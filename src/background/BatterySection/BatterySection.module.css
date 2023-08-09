@@ -84,3 +84,25 @@
 }
 
 
+@media  (max-width: 768px) {
+    @keyframes moveLeft {
+        0%{
+            transform: translateX(50vh);
+        }
+        100%{
+            transform: translate(5vw,65vw) rotate(90deg) scale(0.6);
+        }
+    }
+    .batteryH1{
+        position: absolute;
+        top: 15vh;
+        left: 2vw;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: lightgray;
+        text-align: center;
+        width: 100vw;
+    }
+}
+
+

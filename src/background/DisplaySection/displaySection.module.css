@@ -28,7 +28,7 @@
 }
 
 .textBlockLeft h2{
-    color: white;
+    color: whitesmoke;
     font-size: 28px;
     margin-bottom: 1rem;
     width: 100%;
@@ -37,28 +37,40 @@
 
 .textBlockLeft p {
     font-size: 18px;
-    color: lightgray;
+    color: whitesmoke;
     width:100%;
 }
 
 @media (max-width: 767px) {
     .title {
         font-size: 24px;
-        top: 5vh;
-        left: 25vw;
+        top: 0;
+        left: 50vw;
     }
 
     .textBlockLeft {
-        width: 90%;
+        width: 50vw;
         bottom: 5vh;
     }
 
     .textBlockLeft h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .textBlockLeft p {
         font-size: 16px;
+    }
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
     }
 }
 

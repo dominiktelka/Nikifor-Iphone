@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    top:5vh;
+    top:0;
     left: 5vw;
 }
 
@@ -51,7 +51,7 @@
         font-size: 24px;
     }
     .textBlockLeft{
-        width: 90%;
+        width: 100%;
     }
 
     .textBlockLeft h2 {
@@ -60,12 +60,25 @@
     .textBlockLeft p{
         font-size: 14px;
         width: 100%;
+        z-index: 1;
     }
     .textContainer{
         width: 30vw;
     }
     .movingText{
         font-size: 18px;
+    }
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
     }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

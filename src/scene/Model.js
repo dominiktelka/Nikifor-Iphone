@@ -1,8 +1,7 @@
 import React from 'react'
 import {useGLTF, useTexture} from '@react-three/drei'
 
-export function Model({props,isInteractive}) {
-  const { nodes, materials } = useGLTF('./scene.gltf')
+export function Model({props,isInteractive, nodes ,materials}) {
   // const texture = useTexture('./model/textures/james.png')
   // materials.Body.map = texture
   // console.log(materials.Body)

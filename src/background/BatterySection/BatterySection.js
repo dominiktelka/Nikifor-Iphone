@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './BatterySection.module.css'
 
 
@@ -14,7 +14,7 @@ const BatterySection = ({currentSectionNumber}) => {
 
         return () => clearInterval(interval); // Czyszczenie intervalu, gdy komponent jest odmontowywany
     }, [batteryItemsCount]);
-console.log(currentSectionNumber)
+
     return (
         <section className={styles.section}>
             <h1 className={currentSectionNumber === 7 ? `${styles.batteryH1} ${styles.animation}`: '' }>Go all day with single charge...</h1>

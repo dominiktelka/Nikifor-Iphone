@@ -3,11 +3,11 @@ import styles from './processorSection.module.css'
 import a15 from "./A15-Bionic.jpg"
 
 
-const ProcessorSection = () =>{
+const ProcessorSection = ({currentSectionNumber}) =>{
 
 
     return(
-        <section className={styles.section}>
+        <section className={ currentSectionNumber === 6 ? `${styles.animation} ${styles.section}` : ''}>
             <h1>Fastest Processor</h1>
             <div className={styles.imgContainer}>
                 <img src={a15} alt="A15 Processor"/>

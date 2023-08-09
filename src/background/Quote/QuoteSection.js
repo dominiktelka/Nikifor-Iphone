@@ -12,6 +12,7 @@ const Quote = () =>{
             <p className={styles.text}><span>&nbsp;&nbsp;&nbsp;So you have to trust that the dots</span></p>
             <p className={styles.text}><span>&nbsp;&nbsp;&nbsp;Will somehow connect in your future.&#8221;</span></p>
             <p className={styles.text}><span className='author'>&#x23AF;Steve Jobs</span></p>
+            <div className={styles.down}>swipe down</div>
         </div>
     )
 }

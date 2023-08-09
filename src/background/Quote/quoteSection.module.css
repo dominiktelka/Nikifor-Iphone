@@ -26,6 +26,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.down{
+    position: absolute;
+    bottom: 15vh;
+    animation: bounceAnimation 1s infinite alternate;
+    transition: transform 0.2s linear;
+}
 @media (min-width: 1025px) and (max-width: 1440px) {
     .text {
         font-size: 35px;
@@ -70,6 +77,14 @@
     to {
         opacity: 1;
         transform: translateY(0); /* Zmieniamy transformację translateY na 0, aby elementy pojawiały się z dolu */
+    }
+}
+@keyframes bounceAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
     }
 }
 

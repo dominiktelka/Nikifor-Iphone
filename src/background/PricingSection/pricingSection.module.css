@@ -25,7 +25,6 @@
     height: 1.5rem;
     cursor: pointer;
     border-radius: 50%;
-    /*background-color: ${(props) => props.color};*/
     margin: 0.5rem 0;
     border: 1px solid black;
     transition: transform 0.3s ease;
@@ -119,3 +118,33 @@
      text-decoration: underline;
  }
 
+@media (max-width: 768px) {
+    .Colors{
+        transform: rotate(-90deg);
+        bottom: -15vh;
+        left: 40vw;
+    }
+    .details{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -1vh;
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+    }
+    .title{
+        font-size: 18px;
+        color: whitesmoke;
+    }
+    .subtitle {
+        font-size: 18px;
+        color: whitesmoke;
+    }
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './displaySection.module.css'
 
 
-const DisplaySection = () =>{
+const DisplaySection = ({currentSectionNumber}) =>{
 
     return(
-        <section className={styles.section}>
+        <section className={ currentSectionNumber === 4 ? `${styles.animation} ${styles.section}` : ''}>
             <h1 className={styles.title}>
                 Impressive <br/> Display
             </h1>

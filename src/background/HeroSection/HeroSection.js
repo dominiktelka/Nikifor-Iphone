@@ -4,26 +4,27 @@ import styles from "./HeroSection.module.css";
 
 const HeroSection = ({ currentSectionNumber }) => {
     const videoRef = useRef(null);
-    const [shouldPlay, setShouldPlay] = useState(false);
-
-    useEffect(() => {
-        if (currentSectionNumber === 2) {
-            setShouldPlay(true);
-        } else {
-            setShouldPlay(false);
-        }
-    }, [currentSectionNumber]);
-
-    useEffect(() => {
-        const videoElement = videoRef.current;
-
-        if (shouldPlay && videoElement.paused) {
-            videoElement.play();
-        } else if (!shouldPlay && !videoElement.paused) {
-            videoElement.pause();
-            videoElement.currentTime = 0; // Przewiń video do początku
-        }
-    }, [shouldPlay]);
+    // const [shouldPlay, setShouldPlay] = useState(false);
+    //
+    // useEffect(() => {
+    //     if (currentSectionNumber === 2) {
+    //         setShouldPlay(true);
+    //     } else {
+    //         setShouldPlay(false);
+    //     }
+    // }, [currentSectionNumber]);
+    //
+    // useEffect(() => {
+    //     const videoElement = videoRef.current;
+    //
+    //     if (shouldPlay && videoElement.paused) {
+    //         videoElement.play();
+    //     } else if (!shouldPlay && !videoElement.paused) {
+    //         videoElement.pause();
+    //         videoElement.currentTime = 0; // Przewiń video do początku
+    //     }
+    //     console.log(videoElement)
+    // }, [shouldPlay]);
 
     return (
         <>

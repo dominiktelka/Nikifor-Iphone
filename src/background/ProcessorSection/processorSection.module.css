@@ -64,10 +64,6 @@
     height: auto;
 }
 
-/*@media screen and (max-width: 48em) {*/
-/*  display: none;*/
-/*}*/
-
 
 .text{
     font-size: 18px;
@@ -84,4 +80,43 @@
     padding-left: 2rem;
 
 }
+
+@media  (max-width: 768px) {
+.text{
+    font-size: 10px;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+    .section h1{
+        font-size: 48px;
+        bottom: -3vh;
+    }
+    .imgContainer{
+        width:35%;
+        position: absolute;
+        top: 55%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        animation: glow 3s ease infinite;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+
+}
+
 

@@ -13,7 +13,7 @@ import {useContext, useState} from "react";
 import CameraSection from "./CameraSection/CameraSection";
 import PricingSection from "./PricingSection/PricingSection";
 
-export default function Background({ currentSectionNumber }) {
+export default function Background({ currentSectionNumber , materials}) {
 
 
 
@@ -31,18 +31,18 @@ export default function Background({ currentSectionNumber }) {
                 <DesignSection currentSectionNumber={currentSectionNumber}/>
             </div>
             <div className={styles.stripe} style={{height: `${currentSectionNumber === 4 ? 100 : 0}vh`, width:'100vw' }}>
-                <DisplaySection/>
+                <DisplaySection currentSectionNumber={currentSectionNumber}/>
             </div>
             <div className={styles.stripe} style={{height: `${currentSectionNumber === 5 ? 100 : 0}vh`, width:'100vw' }}>
-                <SecondDisplaySection/>
+                <SecondDisplaySection currentSectionNumber={currentSectionNumber}/>
             </div>
             <div className={styles.stripe} style={{height: `${currentSectionNumber === 6 ? 100 : 0}vh`, width:'100vw' }}>
-                <ProcessorSection/>
+                <ProcessorSection currentSectionNumber={currentSectionNumber}/>
             </div>
             <div className={styles.stripe} style={{height: `${currentSectionNumber === 7 ? 100 : 0}vh`, width:'100vw'}}>
                 <BatterySection currentSectionNumber={currentSectionNumber}/>
             </div>
-                <ColorContextProvider >
+                <ColorContextProvider materials={materials}>
                     <div className={styles.stripe} style={{ height: `${sectionsVisible ? 100 : 0}vh`, width:'100vw' }}>
                         <ColorSection currentSection={currentSectionNumber} />
                     </div>
