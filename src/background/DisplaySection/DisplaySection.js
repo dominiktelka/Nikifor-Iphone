@@ -9,10 +9,10 @@ const DisplaySection = ({currentSectionNumber}) =>{
             <h1 className={styles.title}>
                 Impressive <br/> Display
             </h1>
-            <div className={styles.textBlockLeft}>
+            <div className={styles.textBlockRight}>
                 <h2>Super Ratine XDR Display</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea magnam molestias odio repellendus veniam voluptate voluptatibus. Accusantium aperiam, aut distinctio dolorum excepturi illum magni officiis pariatur quasi quidem quos tempora.
+                    Offer a wide dynamic range (HDR) to accurately reproduce the dark and light areas of photos and videos. The display of deep blacks and pure, bright whites is possible while preserving the details of the intermediate shades. Photos get a vivid look and anything viewed in Dolby Vision, HDR10 or HLG is truly stunning.
                 </p>
             </div>
         </section>

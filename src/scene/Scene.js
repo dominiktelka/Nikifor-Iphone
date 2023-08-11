@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Canvas, useFrame, } from "@react-three/fiber";
-import { Environment, OrbitControls, } from "@react-three/drei";
+import {Environment, OrbitControls, Sparkles,} from "@react-three/drei";
 import { Model } from "./Model";
 import { getProject } from "@theatre/core";
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from "@theatre/r3f";
@@ -19,7 +19,7 @@ import extension from "@theatre/r3f/dist/extension";
 
 
 
-const Scene = ({ scrollPercentage, isInteractive,nodes, materials }) => {
+const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSectionNumber }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
@@ -37,12 +37,20 @@ const Scene = ({ scrollPercentage, isInteractive,nodes, materials }) => {
         ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
         : { camera: { fov: 60 } };
 
+    const sectionsVisible = [1, 2, 3, 4, 5, 6,7,15].includes(currentSectionNumber);
+
     return (
         <>
             <Canvas {...canvasProps}>
                 <ambientLight intensity={1} />
                 <Environment preset="warehouse" />
                 <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                { sectionsVisible ? <Sparkles
+                    scale={20}
+                    amount={200}
+                    position={[0, 0, 0]}
+                    size={4}
+                    color={'white'}/> : ''}
                 {isInteractive ? (
                     <SheetProvider sheet={demoSheet}>
                         <ScrollToAnimationPasser scrollPercentage={scrollPercentage} />

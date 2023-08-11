@@ -19,15 +19,16 @@ const BatterySection = ({currentSectionNumber}) => {
         <section className={styles.section}>
             <h1 className={currentSectionNumber === 7 ? `${styles.batteryH1} ${styles.animation}`: '' }>Go all day with single charge...</h1>
             <ul className={currentSectionNumber === 7 ? `${styles.battery} ${styles.animationMoveLeft}`: '' }>
-                {Array.from({ length: batteryItemsCount }).map((_, index) => (
-                    <li
-                        key={index}
-                        className={index >= activeIndex ? styles.active : ''}
-                        style={{
-                            animationDelay: `${(batteryItemsCount - index - 1) * 0.1}s`, // Zmniejszamy szybkość pojawiania się elementu
-                        }}
-                    ></li>
-                ))}
+
+                    {Array.from({ length: batteryItemsCount }).map((_, index) => (
+                        <li
+                            key={index}
+                            className={index >= activeIndex ? styles.active : ''}
+                            style={{
+                                animationDelay: `${(batteryItemsCount - index - 1) * 0.1}s`, // Zmniejszamy szybkość pojawiania się elementu
+                            }}
+                        ></li>
+                    ))}
             </ul>
         </section>
     );

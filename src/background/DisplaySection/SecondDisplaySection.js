@@ -9,15 +9,14 @@ const DisplaySection2 = ({currentSectionNumber}) =>{
 
     return(
         <section className={ currentSectionNumber === 5 ? `${styles.animation} ${styles.section}` : ''}>
-            <div className={styles.textBlockLeft} >
-                <h2>Big is better</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea magnam molestias odio repellendus veniam voluptate voluptatibus. Accusantium aperiam, aut distinctio dolorum excepturi illum magni officiis pariatur quasi quidem quos tempora.
-                </p>
-            </div>
             <div className={styles.textContainer}>
-                <p className={styles.movingText} >Toughter than ever.</p>
-                <p className={styles.movingText} >Every touch matters.</p>
+                <p className={styles.movingText} >Layer of Ceramic Shield</p>
+            </div>
+            <div className={styles.textBlockLeft} >
+                <h2>The glass is combined with nanoceramic crystals - harder than most metals - to significantly increase its strength.</h2>
+                <p>
+                    The double ion exchange process further protects the surface from abrasions, scratches and daily wear and tear.
+                </p>
             </div>
         </section>
 

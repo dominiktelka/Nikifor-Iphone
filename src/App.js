@@ -59,7 +59,7 @@ function App() {
                 <Background currentSectionNumber={currentSectionNumber} nodes={nodes} materials={materials}/>
 
                 <div className={isInteractive ? styles.sceneContainer : styles.sceneContainerActive}>
-                    <Scene scrollPercentage={scrollPercentage} isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                    <Scene scrollPercentage={scrollPercentage} isInteractive={isInteractive} nodes={nodes} materials={materials} currentSectionNumber={currentSectionNumber}/>
                 </div>
 
                 <ScrollControls

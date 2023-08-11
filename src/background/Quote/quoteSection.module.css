@@ -5,8 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
 }
 .text{
     width:90%;
@@ -29,7 +27,7 @@
 
 .down{
     position: absolute;
-    bottom: 15vh;
+    bottom: 30vh;
     animation: bounceAnimation 1s infinite alternate;
     transition: transform 0.2s linear;
 }
@@ -43,7 +41,7 @@
         transform: translateX(25vw);
     }
 }
-@media (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .text {
         font-size: 20px;
         text-align: center;
@@ -55,10 +53,37 @@
     .text:nth-child(5) {
         transform: translateX(25vw);
     }
+    .down{
+        position: absolute;
+        bottom:10vh;
+        animation: bounceAnimation 1s infinite alternate;
+        transition: transform 0.2s linear;
+        color: whitesmoke;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .text {
+        font-size: 20px;
+        text-align: center;
+        width: 90%;
+    }
+    .text span {
+        transform: translateY(5rem);
+    }
+    .text:nth-child(5) {
+        transform: translateX(25vw);
+    }
+    .down{
+        position: absolute;
+        bottom:10vh;
+        animation: bounceAnimation 1s infinite alternate;
+        transition: transform 0.2s linear;
+        color: whitesmoke;
+    }
 }
 
 /* Style dla urządzeń tabletów */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .text {
         font-size: 24px;
         text-align: center;
@@ -108,3 +133,6 @@
 .text:nth-child(5) span {
     animation-delay: 2s;
 }
+
+
+
