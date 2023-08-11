@@ -1,11 +1,8 @@
- .pricingSection{
+.pricingSection{
      width: 100vw;
      height: 100vh;
-     position: relative;
      transition: background-color 1.5s ease, opacity 2s ease;
  }
-
-
 .Colors{
     display: flex;
     flex-direction: column;
@@ -17,8 +14,6 @@
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-
-
 .colorButton{
     list-style: none;
     width: 1.5rem;
@@ -51,10 +46,8 @@
  .colorButton:nth-child(6){
      background-color: #215E7C;
  }
-
-
 .details{
-    width: 50%;
+    width: 70%;
     position: absolute;
     right: -5vw;
     top: 20vh;
@@ -75,11 +68,6 @@
          transform: translateY(0vh);
      }
  }
-
-.title{
-    font-size: 40px;
-    color: whitesmoke;
-}
 .subtitle {
     font-size: 40px;
     color: whitesmoke;
@@ -89,7 +77,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .buy{
     display: flex;
     justify-content: center;
@@ -107,7 +94,6 @@
     cursor: pointer;
     z-index: 1;
 }
-
 .btnLink{
     color: #0071e3;
     text-decoration: none;
@@ -117,25 +103,38 @@
 .btnLink:hover {
      text-decoration: underline;
  }
+ @media (min-width: 280px) and (max-width: 380px) {
+     .Colors{
+         transform: rotate(-90deg);
+         bottom: -15vh;
+         left: 40vw;
+     }
+     .details{
+         position: absolute;
+         top: 0;
+         right: 15vw;
+     }
+     .subtitle {
+         font-size: 14px;
+         color: whitesmoke;
+     }
+     .buttonContainer {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
 
-@media (max-width: 768px) {
+ }
+@media (min-width: 381px) and (max-width: 480px) {
     .Colors{
         transform: rotate(-90deg);
         bottom: -15vh;
         left: 40vw;
     }
     .details{
-        width: 100%;
         position: absolute;
-        left: 0;
-        top: -1vh;
-        /*flex-direction: column;*/
-        /*justify-content: center;*/
-        /*align-items: center;*/
-    }
-    .title{
-        font-size: 18px;
-        color: whitesmoke;
+        top: 0;
+        right: 15vw;
     }
     .subtitle {
         font-size: 18px;
@@ -147,4 +146,6 @@
         align-items: center;
     }
 
+}
+@media (max-width: 768px) {
 }

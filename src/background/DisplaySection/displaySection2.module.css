@@ -8,7 +8,6 @@
     background-color: black;
     color: white;
 }
-
 .textBlockLeft{
     position: absolute;
     display: flex;
@@ -18,35 +17,61 @@
     left: 5vw;
     width: 40vw;
 }
-
 .textBlockLeft h2{
     font-size: 30px;
 }
-
-
 .textBlockLeft p {
     font-size: 24px;
     color: lightgray;
     width: 100%;
 }
-
-
 .textContainer {
     width:100vw;
     position: absolute;
     top:10vh;
     left: 5vw;
 }
-
-
 .movingText{
     font-size: 50px;
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+@media (min-width:280px) and (max-width: 359px) {
+    .textBlockLeft{
+        width: 100%;
+        top: 10vh;
+    }
 
-@media (min-width:320px) and (max-width: 480px) {
+    .textBlockLeft h2 {
+        font-size: 13px;
+    }
+    .textBlockLeft p{
+        font-size: 11px;
+        width: 90%;
+    }
+    .textContainer{
+        width: 100vw;
+        top: 0;
+        left: 10vw;
+    }
+    .movingText{
+        font-size:20px;
+    }
+    .animation{
+        animation: moveUp 0.8s linear;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
+@media (min-width:360px) and (max-width: 400px) {
     .textBlockLeft{
         width: 100%;
         top: 10vh;
@@ -68,7 +93,41 @@
         font-size:24px;
     }
     .animation{
-        animation: moveUp 1s linear;
+        animation: moveUp 0.8s linear;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
+@media (min-width:401px) and (max-width: 767px) {
+    .textBlockLeft{
+        width: 100%;
+        top: 10vh;
+    }
+
+    .textBlockLeft h2 {
+        font-size: 18px;
+    }
+    .textBlockLeft p{
+        font-size: 16px;
+        width: 80%;
+    }
+    .textContainer{
+        width: 100vw;
+        top: 0;
+        left: 14vw;
+    }
+    .movingText{
+        font-size:24px;
+    }
+    .animation{
+        animation: moveUp 0.8s linear;
     }
 
     @keyframes moveUp {
@@ -96,5 +155,16 @@
     }
     .textBlockLeft{
         width: 50%;
+    }
+    .animation{
+        animation: moveUp 0.8s linear;
+    }
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
     }
 }

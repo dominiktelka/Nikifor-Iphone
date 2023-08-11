@@ -37,7 +37,7 @@ const PricingSection = ({currentSectionNumber}) => {
 
                 <div className={currentSectionNumber === 15 ? `${styles.details} ${styles.animationMoveDown}`: '' }>
                     <h2 className={styles.subtitle}>iPhone</h2>
-                    <h2 className={styles.title}>14 Pro Max</h2>
+                    <h2 className={styles.subtitle}>14 Pro Max</h2>
                     <h2 className={styles.subtitle}>From $1099</h2>
                     <div className={styles.buttonContainer}>
                         <button className={styles.buy}>Buy</button>

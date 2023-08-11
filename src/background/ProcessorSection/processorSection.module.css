@@ -9,8 +9,6 @@
     background-color: black;
     overflow: hidden;
 }
-
-
 .section h1{
     width: 100%;
     text-align: center;
@@ -21,8 +19,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-
 @keyframes glow {
     0%{
         box-shadow: 1px 1px 10px white;
@@ -34,8 +30,6 @@
         box-shadow: 1px 1px 10px white;
     }
 }
-
-
 .imgContainer{
     width:25%;
     position: absolute;
@@ -48,19 +42,14 @@
     justify-content: center;
     align-items: center;
 }
-
-
 .imgContainer img{
     width: 100%;
     height: auto;
 }
-
-
 .text{
     height: 40vh;
 
 }
-
 .text span{
     text-align: center;
     overflow: hidden;
@@ -70,49 +59,40 @@
 
 
 }
-@media (min-width:320px) and (max-width:480px){
+@media (min-width:280px) and (max-width:340px){
     .text {
-        font-size: 9px;
+        font-size: 8px;
         width: 100vw;
         position: absolute;
         top: 0;
     }
-
     .text span {
         animation: fadeInAnimation 2.5s ease forwards;
         color: whitesmoke;
         background-color: transparent;
         border-radius: 30px;
-        padding: 4px 10px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
-        /*margin: 5px;*/
+        padding: 4px 15px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
         box-shadow: 0 0 10px white;
         align-items: center;
     }
-
     .text span:nth-child(1) {
         position: absolute;
         top: 5vh;
         left: 15vw;
         width: 20vw;
     }
-
-    /* Span 2 w prawym górnym rogu */
     .text span:nth-child(2) {
         position: absolute;
         top: 5vh;
         right: 15vw;
         width: 20vw;
     }
-
-    /* Span 3 w lewym dolnym rogu */
     .text span:nth-child(3) {
         position: absolute;
         bottom: 5vh;
         left: 15vw;
         width: 20vw;
     }
-
-    /* Span 4 w prawym dolnym rogu */
     .text span:nth-child(4) {
         position: absolute;
         bottom: 5vh;
@@ -124,9 +104,149 @@
         bottom: -3vh;
     }
     .imgContainer{
-        width:35%;
+        width:55%;
         position: absolute;
         top: 55%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        animation: glow 3s ease infinite;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
+@media (min-width:341px) and (max-width:380px){
+    .text {
+        font-size: 8px;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+    }
+    .text span {
+        animation: fadeInAnimation 2.5s ease forwards;
+        color: whitesmoke;
+        background-color: transparent;
+        border-radius: 30px;
+        padding: 4px 20px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
+        /*margin: 5px;*/
+        box-shadow: 0 0 10px white;
+        align-items: center;
+    }
+    .text span:nth-child(1) {
+        position: absolute;
+        top: 5vh;
+        left: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(2) {
+        position: absolute;
+        top: 5vh;
+        right: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(3) {
+        position: absolute;
+        bottom: 5vh;
+        left: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(4) {
+        position: absolute;
+        bottom: 5vh;
+        right: 15vw;
+        width: 20vw;
+    }
+    .section h1{
+        font-size: 48px;
+        bottom: -3vh;
+    }
+    .imgContainer{
+        width:55%;
+        position: absolute;
+        top: 58%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        animation: glow 3s ease infinite;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
+@media (min-width:381px) and (max-width:480px){
+    .text {
+        font-size: 10px;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+    }
+    .text span {
+        animation: fadeInAnimation 2.5s ease forwards;
+        color: whitesmoke;
+        background-color: transparent;
+        border-radius: 30px;
+        padding: 4px 20px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
+        /*margin: 5px;*/
+        box-shadow: 0 0 10px white;
+        align-items: center;
+    }
+    .text span:nth-child(1) {
+        position: absolute;
+        top: 5vh;
+        left: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(2) {
+        position: absolute;
+        top: 5vh;
+        right: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(3) {
+        position: absolute;
+        bottom: 5vh;
+        left: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(4) {
+        position: absolute;
+        bottom: 5vh;
+        right: 15vw;
+        width: 20vw;
+    }
+    .section h1{
+        font-size: 48px;
+        bottom: -3vh;
+    }
+    .imgContainer{
+        width:65%;
+        position: absolute;
+        top: 60%;
         left:50%;
         transform: translate(-50%,-50%);
         animation: glow 3s ease infinite;

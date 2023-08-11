@@ -6,8 +6,6 @@
     justify-content: center;
     align-items: flex-start;
 }
-
-
 .textContainer span{
     font-size: 28px;
     width:90%;
@@ -18,7 +16,6 @@
     position: absolute;
     top: 10vh;
 }
-
 @keyframes moveRightToLeft {
     0% {
         transform: translateX(40%) scale(1);
@@ -37,12 +34,9 @@
 .moveLeftToRight {
     animation: moveLeftToRight 1s 1;
 }
-
 .moveRightToLeft {
     animation: moveRightToLeft 1s 1;
 }
-
-
 .textContainer2{
     width:100%;
     height: 50vh;
@@ -51,11 +45,9 @@
     justify-content: center;
     align-items: flex-end;
 }
-
-
 .textContainer2 span{
     position: absolute;
-    font-size: 28px;
+    font-size: 26px;
     width:80%;
     font-weight: 600;
     text-transform: capitalize;
@@ -65,8 +57,6 @@
     padding: 0 3vw;
     animation-fill-mode: forwards;
 }
-
-
 @keyframes moveLeftToRight {
     0% {
         transform: translateX(-30%) scale(1);
@@ -81,7 +71,6 @@
         -webkit-text-fill-color: transparent;
     }
 }
-
 @media (max-width: 767px ){
     @keyframes moveLeftToRight {
         0% {

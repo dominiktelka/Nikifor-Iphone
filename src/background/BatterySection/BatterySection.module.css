@@ -12,8 +12,6 @@
     animation: moveLeft 1s 1;
     animation-fill-mode: forwards;
 }
-
-
 .batteryH1{
     position: absolute;
     top: 35vh;
@@ -39,8 +37,6 @@
         transform: translateX(-15vh);
     }
 }
-
-
 .battery{
     position: absolute;
     right:4rem;
@@ -51,8 +47,6 @@
     padding: 0.5rem;
     width: 15rem;
 }
-
-
 .battery li{
     width: 100%;
     height: 5rem;
@@ -62,7 +56,6 @@
     opacity: 0;
     margin: 0.5rem 0;
 }
-
 .battery li.active{
     animation: fadeIn infinite ease forwards;
     width: 100%;
@@ -71,7 +64,6 @@
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     border-radius: 20px;
 }
-
 @keyframes fadeIn {
     from {
         transform: translateY(100%);
@@ -83,8 +75,7 @@
     }
 }
 
-
-@media  (min-width: 280px)and (max-width: 370px) {
+@media  (min-width: 280px)and (max-width: 320px) {
     @keyframes moveLeft {
         0% {
             transform: translate(0, 200vh) ;
@@ -122,7 +113,159 @@
         border-radius: 10px;
     }
 }
-@media  (min-width: 371px)and (max-width: 480px) {
+@media  (min-width: 321px)and (max-width: 350px) {
+    @keyframes moveLeft {
+        0% {
+            transform: translate(0, 200vh) ;
+        }
+        100% {
+            transform:  rotate(90deg)scale(0.7);
+        }
+    }
+    .batteryH1{
+        position: absolute;
+        top: 15vh;
+        left: 2vw;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: lightgray;
+        text-align: center;
+        width: 100vw;
+    }
+    .battery{
+        list-style: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 13rem;
+        top:50%;
+        left: 23%;
+    }
+
+    .battery li.active{
+        animation: fadeIn infinite linear forwards;
+        width: 100%;
+        height: 5rem;
+        background-color: black;
+        background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        border-radius: 10px;
+    }
+}
+@media  (min-width: 351px)and (max-width: 380px) {
+    @keyframes moveLeft {
+        0% {
+            transform: translate(0, 200vh) ;
+        }
+        100% {
+            transform:  rotate(90deg)scale(0.7);
+        }
+    }
+    .batteryH1{
+        position: absolute;
+        top: 15vh;
+        left: 2vw;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: lightgray;
+        text-align: center;
+        width: 100vw;
+    }
+    .battery{
+        list-style: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 13rem;
+        top:55%;
+        left: 23%;
+    }
+
+    .battery li.active{
+        animation: fadeIn infinite linear forwards;
+        width: 100%;
+        height: 5rem;
+        background-color: black;
+        background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        border-radius: 10px;
+    }
+}
+@media  (min-width: 381px)and (max-width: 400px) {
+    @keyframes moveLeft {
+        0% {
+            transform: translate(0, 200vh) ;
+        }
+        100% {
+            transform:  rotate(90deg)scale(0.8);
+        }
+    }
+    .batteryH1{
+        position: absolute;
+        top: 15vh;
+        left: 2vw;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: lightgray;
+        text-align: center;
+        width: 100vw;
+    }
+    .battery{
+        list-style: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 13rem;
+        top:60%;
+        left: 25%;
+    }
+
+    .battery li.active{
+        animation: fadeIn infinite linear forwards;
+        width: 100%;
+        height: 5rem;
+        background-color: black;
+        background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        border-radius: 10px;
+    }
+}
+@media  (min-width: 401px)and (max-width: 420px) {
+    @keyframes moveLeft {
+        0% {
+            transform: translate(0, 200vh) ;
+        }
+        100% {
+            transform:  rotate(90deg)scale(0.8);
+        }
+    }
+    .batteryH1{
+        position: absolute;
+        top: 15vh;
+        left: 2vw;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: lightgray;
+        text-align: center;
+        width: 100vw;
+    }
+    .battery{
+        list-style: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 13rem;
+        top:60%;
+        left: 27%;
+    }
+
+    .battery li.active{
+        animation: fadeIn infinite linear forwards;
+        width: 100%;
+        height: 5rem;
+        background-color: black;
+        background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        border-radius: 10px;
+    }
+}
+@media  (min-width: 421px)and (max-width: 768px) {
     @keyframes moveLeft {
         0% {
             transform: translate(0, 200vh) ;
@@ -160,4 +303,5 @@
         border-radius: 10px;
     }
 }
+
 

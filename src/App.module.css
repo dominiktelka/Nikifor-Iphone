@@ -67,15 +67,13 @@
     animation-fill-mode: forwards;
     /*moveRight 2s 1 deosent work well with wiggle*/
 }
-/*@keyframes moveRight {*/
-/*    0%{*/
-/*        transform: translateX(-50vw);*/
-/*    }*/
-/*    100%{*/
-/*        transform: translateX(0vw);*/
-/*    }*/
-/*}*/
-@media (max-width: 768px) {
+@media (min-width: 280px) and (max-width: 330px){
+    .button360{
+        left: 20%;
+        bottom: 5vh;
+        }
+}
+@media (min-width: 331px) and (max-width: 768px) {
     .button360{
         left: 28%;
         bottom: 5vh;
