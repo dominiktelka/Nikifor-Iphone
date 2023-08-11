@@ -84,7 +84,45 @@
 }
 
 
-@media  (min-width: 280px)and (max-width: 480px) {
+@media  (min-width: 280px)and (max-width: 370px) {
+    @keyframes moveLeft {
+        0% {
+            transform: translate(0, 200vh) ;
+        }
+        100% {
+            transform:  rotate(90deg)scale(0.6);
+        }
+    }
+    .batteryH1{
+        position: absolute;
+        top: 15vh;
+        left: 2vw;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: lightgray;
+        text-align: center;
+        width: 100vw;
+    }
+    .battery{
+        list-style: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 13rem;
+        top:50%;
+        left: 15%;
+    }
+
+    .battery li.active{
+        animation: fadeIn infinite linear forwards;
+        width: 100%;
+        height: 5rem;
+        background-color: black;
+        background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        border-radius: 10px;
+    }
+}
+@media  (min-width: 371px)and (max-width: 480px) {
     @keyframes moveLeft {
         0% {
             transform: translate(0, 200vh) ;
@@ -105,11 +143,12 @@
     }
     .battery{
         list-style: none;
+        position: absolute;
         border: 3px solid black;
         border-radius: 20px;
-        width: 15rem;
-        top: 50%;
-        left: 20%;
+        width: 13rem;
+        top:60%;
+        left: 23%;
     }
 
     .battery li.active{
@@ -121,5 +160,4 @@
         border-radius: 10px;
     }
 }
-
 

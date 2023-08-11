@@ -96,7 +96,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.17001499355250715
+                    "value": 0.1
                   },
                   {
                     "id": "200sRPYOx5",
@@ -336,7 +336,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -0.7
+                    "value": 0.1
                   },
                   {
                     "id": "ejShMhdM9d",
@@ -349,7 +349,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -0.25
+                    "value": -0.1
                   },
                   {
                     "id": "x-VUp7rJFK",
@@ -550,7 +550,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -0.8
+                    "value": -0.4
                   },
                   {
                     "id": "9MMOKmJXXB",
@@ -2015,6 +2015,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "k9wGG7Z9gexG-Dc_",
     "eiS5QEsEq1FvsMli",
     "Hdn8zzvII6cjsLYV",
     "QtNLvcY-jlH6bn4f",
