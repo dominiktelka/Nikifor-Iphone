@@ -14,7 +14,7 @@ const ProcessorSection = ({currentSectionNumber}) =>{
             </div>
             <div className={styles.text}>
                 <span>Nearly 16 billion transistors for industry-leading speed and efficiency</span>
-                <span>5-core GPU with 50% more memory bandwidth for complex graphics in the latest video games</span>
+                <span>5-core GPU with 50% more memory bandwidth for complex graphics</span>
                 <span>Faster 6-core CPU handles demanding workloads smoothly and efficiently</span>
                 <span>Advanced ISP powers the creative flexibility of the quad-pixel sensor</span>
             </div>

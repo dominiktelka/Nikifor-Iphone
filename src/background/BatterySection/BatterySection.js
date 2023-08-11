@@ -8,11 +8,13 @@ const BatterySection = ({currentSectionNumber}) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveIndex((prevIndex) => (prevIndex + 1) % batteryItemsCount);
-        }, 1500);
+       {
+            const interval = setInterval(() => {
+                setActiveIndex((prevIndex) => (prevIndex + 1) % batteryItemsCount);
+            }, 2000);
 
-        return () => clearInterval(interval); // Czyszczenie intervalu, gdy komponent jest odmontowywany
+            return () => clearInterval(interval); // Czyszczenie intervalu, gdy komponent jest odmontowywany
+        }
     }, [batteryItemsCount]);
 
     return (

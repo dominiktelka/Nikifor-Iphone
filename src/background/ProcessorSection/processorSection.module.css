@@ -22,15 +22,6 @@
     -webkit-text-fill-color: transparent;
 }
 
-/*@media screen and (max-width: 70em) {*/
-/*    section h1{font-size: 30px;}*/
-/*@media (max-width: 64em) {*/
-/*    font-size: var(--fontxxl);*/
-/*}*/
-/*@media (max-width: 48em) {*/
-/*    font-size: var(--fontxl);*/
-/*}*/
-
 
 @keyframes glow {
     0%{
@@ -66,63 +57,67 @@
 
 
 .text{
-    font-size: 18px;
-    color: lightgray;
-    width:30%;
     height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
 }
 
 .text span{
-    margin: 0.2rem 0;
-    padding-left: 2rem;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    width: 30%;
+    height: 30%;
+
 
 }
 @media (min-width:320px) and (max-width:480px){
-    .text{
-        font-size: 10px;
+    .text {
+        font-size: 9px;
         width: 100vw;
         position: absolute;
         top: 0;
-        text-align: center;
     }
+
     .text span {
-        display: inline-block;
         animation: fadeInAnimation 2.5s ease forwards;
+        color: whitesmoke;
+        background-color: transparent;
+        border-radius: 30px;
+        padding: 4px 10px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
+        /*margin: 5px;*/
+        box-shadow: 0 0 10px white;
+        align-items: center;
     }
 
     .text span:nth-child(1) {
         position: absolute;
-        top: 3vh;
-        left: 5vw;
-        width: 25vw;
-        text-shadow: 0 0 10px rgba(53, 195, 243, 0.7);
+        top: 5vh;
+        left: 15vw;
+        width: 20vw;
     }
 
     /* Span 2 w prawym górnym rogu */
     .text span:nth-child(2) {
         position: absolute;
-        top: 3vh;
-        right: 10vw;
-        width: 25vw;
+        top: 5vh;
+        right: 15vw;
+        width: 20vw;
     }
 
     /* Span 3 w lewym dolnym rogu */
     .text span:nth-child(3) {
         position: absolute;
-        bottom: 3vh;
-        left: 5vw;
-        width: 25vw;
+        bottom: 5vh;
+        left: 15vw;
+        width: 20vw;
     }
 
     /* Span 4 w prawym dolnym rogu */
     .text span:nth-child(4) {
         position: absolute;
-        bottom: 3vh;
-        right: 10vw;
-        width: 25vw;
+        bottom: 5vh;
+        right: 15vw;
+        width: 20vw;
     }
     .section h1{
         font-size: 48px;
