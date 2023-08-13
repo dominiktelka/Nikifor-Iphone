@@ -50,7 +50,7 @@ export default function Background({ currentSectionNumber , materials}) {
 
     const sectionStyles = Array.from({ length: 16 }).map((_, index) => {
         const isVisible = currentSectionNumber === index + 1;
-        const height = isVisible ? "100svh" : "0";
+        const height = isVisible ? "100%" : "0";
         return {
             height,
             width: "100vw",
