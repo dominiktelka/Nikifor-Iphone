@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Available online view
+
+Open [https://dominiktelka.github.io/Nikifor-Iphone/](https://dominiktelka.github.io/Nikifor-Iphone/) to view it in your browser.
 
 ## Available Scripts
 
