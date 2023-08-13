@@ -50,19 +50,20 @@ export default function Background({ currentSectionNumber , materials}) {
 
     const sectionStyles = Array.from({ length: 16 }).map((_, index) => {
         const isVisible = currentSectionNumber === index + 1;
-        const height = isVisible ? "100%" : "0";
+        const height = isVisible ? "100svh" : "0";
         return {
             height,
-            width: "100vw",
+            width: "100svw",
             overflow: "hidden",
-            transition: "height 1s linear",
+            transition: "height 0.5s linear",
+            position: 'absolute',
         };
     });
 
     return (
         <>
             {sectionStyles.map((style, index) => (
-                <div key={index} className={styles.stripe} style={style}>
+                <div key={index} style={style}>
                     {index === 0 && <QuoteSection/>}
                     {index === 1 && <HeroSection/>}
                     {index === 2 && <DesignSection currentSectionNumber={currentSectionNumber}/>}

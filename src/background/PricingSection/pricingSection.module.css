@@ -1,6 +1,6 @@
 .pricingSection{
      width: 100vw;
-     height: 100vh;
+     height: 100svh;
      transition: background-color 1.5s ease, opacity 2s ease;
  }
 .Colors{

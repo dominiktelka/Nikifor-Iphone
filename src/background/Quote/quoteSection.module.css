@@ -1,6 +1,6 @@
 .textContainer {
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +26,7 @@
 }
 .down{
     position: absolute;
-    bottom: 30vh;
+    bottom: 30svh;
     animation: bounceAnimation 1s infinite alternate;
     transition: transform 0.2s linear;
 }
