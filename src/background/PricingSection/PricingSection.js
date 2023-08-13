@@ -4,7 +4,6 @@ import {ColorContext} from "../ColorContex/ColorContext";
 
 
 
-
 const PricingSection = ({currentSectionNumber}) => {
     const sectionRef = useRef(null);
     const { currentColor, changeColorContext } = useContext(ColorContext);
