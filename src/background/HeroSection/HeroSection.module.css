@@ -39,15 +39,15 @@
 }
 @media (min-width:280px) and (max-width: 350px){
     .title2 span {
-        font-size: 24px;
+        font-size: 22px;
     }
     .title2 span:first-child {
-        margin-top: -30vh;
+        margin-top: -30svh;
         margin-left: 5vw;
     }
     .title2 span:nth-child(2) {
         align-self: flex-end;
-        margin-bottom: -35vh;
+        margin-bottom: -35svh;
         margin-right: 5vw;
     }
 
@@ -60,7 +60,7 @@
     .title{
         font-size: 22px;
         width: 100vw;
-        top: 0;
+        top: -2svh;
         left: 13vw;
     }
 }
@@ -69,12 +69,12 @@
         font-size: 24px;
     }
     .title2 span:first-child {
-        margin-top: -30vh;
+        margin-top: -30svh;
         margin-left: 5vw;
     }
     .title2 span:nth-child(2) {
         align-self: flex-end;
-        margin-bottom: -35vh;
+        margin-bottom: -35svh;
         margin-right: 5vw;
     }
 
@@ -87,7 +87,7 @@
     .title{
         font-size: 28px;
         width: 100vw;
-        top: 0;
+        top: -2svh;
         left: 15vw;
     }
 }
@@ -96,12 +96,12 @@
         font-size: 24px;
     }
     .title2 span:first-child {
-        margin-top: -30vh;
+        margin-top: -30svh;
         margin-left: 5vw;
     }
     .title2 span:nth-child(2) {
         align-self: flex-end;
-        margin-bottom: -35vh;
+        margin-bottom: -35svh;
         margin-right: 5vw;
     }
 
@@ -123,12 +123,12 @@
         font-size: 24px;
     }
     .title2 span:first-child {
-        margin-top: -30vh;
+        margin-top: -30svh;
         margin-left: 5vw;
     }
     .title2 span:nth-child(2) {
         align-self: flex-end;
-        margin-bottom: -35vh;
+        margin-bottom: -35svh;
         margin-right: 5vw;
     }
 

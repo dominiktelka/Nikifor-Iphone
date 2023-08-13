@@ -7,14 +7,14 @@
     align-items: flex-start;
 }
 .textContainer span{
-    font-size: 28px;
+    font-size: 26px;
     width:90%;
     font-weight: 600;
     text-transform: capitalize;
     padding: 0 3vw;
     /*animation-fill-mode: forwards;*/
     position: absolute;
-    top: 5vh;
+    top: 5svh;
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

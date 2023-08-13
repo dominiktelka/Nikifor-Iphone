@@ -83,7 +83,7 @@
     }
     .down{
         position: absolute;
-        bottom:10vh;
+        bottom:10svh;
         animation: bounceAnimation 1s infinite alternate;
         transition: transform 0.2s linear;
         color: whitesmoke;
@@ -103,7 +103,7 @@
     }
     .down{
         position: absolute;
-        bottom:10vh;
+        bottom:10svh;
         animation: bounceAnimation 1s infinite alternate;
         transition: transform 0.2s linear;
         color: whitesmoke;
@@ -123,7 +123,7 @@
     }
     .down{
         position: absolute;
-        bottom:10vh;
+        bottom:10svh;
         animation: bounceAnimation 1s infinite alternate;
         transition: transform 0.2s linear;
         color: whitesmoke;

@@ -76,31 +76,31 @@
     }
     .text span:nth-child(1) {
         position: absolute;
-        top: 5vh;
+        top: 5svh;
         left: 15vw;
         width: 20vw;
     }
     .text span:nth-child(2) {
         position: absolute;
-        top: 5vh;
+        top: 5svh;
         right: 15vw;
         width: 20vw;
     }
     .text span:nth-child(3) {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5svh;
         left: 15vw;
         width: 20vw;
     }
     .text span:nth-child(4) {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5svh;
         right: 15vw;
         width: 20vw;
     }
     .section h1{
         font-size: 48px;
-        bottom: -3vh;
+        bottom: -3svh;
     }
     .imgContainer{
         width:55%;
@@ -120,7 +120,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);
@@ -146,31 +146,31 @@
     }
     .text span:nth-child(1) {
         position: absolute;
-        top: 5vh;
+        top: 5svh;
         left: 15vw;
         width: 20vw;
     }
     .text span:nth-child(2) {
         position: absolute;
-        top: 5vh;
+        top: 5svh;
         right: 15vw;
         width: 20vw;
     }
     .text span:nth-child(3) {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5svh;
         left: 15vw;
         width: 20vw;
     }
     .text span:nth-child(4) {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5svh;
         right: 15vw;
         width: 20vw;
     }
     .section h1{
         font-size: 48px;
-        bottom: -3vh;
+        bottom: -3svh;
     }
     .imgContainer{
         width:55%;
@@ -190,7 +190,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);
@@ -216,31 +216,31 @@
     }
     .text span:nth-child(1) {
         position: absolute;
-        top: 5vh;
+        top: 5svh;
         left: 15vw;
         width: 20vw;
     }
     .text span:nth-child(2) {
         position: absolute;
-        top: 5vh;
+        top: 5svh;
         right: 15vw;
         width: 20vw;
     }
     .text span:nth-child(3) {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5svh;
         left: 15vw;
         width: 20vw;
     }
     .text span:nth-child(4) {
         position: absolute;
-        bottom: 5vh;
+        bottom: 5svh;
         right: 15vw;
         width: 20vw;
     }
     .section h1{
         font-size: 48px;
-        bottom: -3vh;
+        bottom: -3svh;
     }
     .imgContainer{
         width:65%;
@@ -260,7 +260,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);
@@ -276,7 +276,7 @@
 }
     .section h1{
         font-size: 48px;
-        bottom: -3vh;
+        bottom: -3svh;
     }
     .imgContainer{
         width:35%;
@@ -296,7 +296,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);

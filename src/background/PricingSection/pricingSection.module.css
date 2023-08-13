@@ -10,7 +10,7 @@
     align-items: center;
     position: absolute;
     left: 35%;
-    top: 50vh;
+    top: 50svh;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
@@ -50,7 +50,7 @@
     width: 70%;
     position: absolute;
     right: -5vw;
-    top: 20vh;
+    top: 20svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +106,7 @@
  @media (min-width: 280px) and (max-width: 380px) {
      .Colors{
          transform: rotate(-90deg);
-         bottom: -15vh;
+         bottom: -15svh;
          left: 40vw;
      }
      .details{
@@ -128,7 +128,7 @@
 @media (min-width: 381px) and (max-width: 480px) {
     .Colors{
         transform: rotate(-90deg);
-        bottom: -15vh;
+        bottom: -15svh;
         left: 40vw;
     }
     .details{

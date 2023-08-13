@@ -23,18 +23,18 @@
 }
 @keyframes moveUp {
     0%{
-        transform: translateY(50vh);
+        transform: translateY(50svh);
     }
     100%{
-        transform: translateY(-15vh);
+        transform: translateY(-15svh);
     }
 }
 @keyframes moveLeft {
     0%{
-        transform: translateX(50vh);
+        transform: translateX(50svh);
     }
     100%{
-        transform: translateX(-15vh);
+        transform: translateX(-15svh);
     }
 }
 .battery{
@@ -78,7 +78,7 @@
 @media  (min-width: 280px)and (max-width: 320px) {
     @keyframes moveLeft {
         0% {
-            transform: translate(0, 200vh) ;
+            transform: translate(0, 200svh) ;
         }
         100% {
             transform:  rotate(90deg)scale(0.6);
@@ -86,7 +86,7 @@
     }
     .batteryH1{
         position: absolute;
-        top: 15vh;
+        top: 15svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -116,7 +116,7 @@
 @media  (min-width: 321px)and (max-width: 350px) {
     @keyframes moveLeft {
         0% {
-            transform: translate(0, 200vh) ;
+            transform: translate(0, 200svh) ;
         }
         100% {
             transform:  rotate(90deg)scale(0.7);
@@ -124,7 +124,7 @@
     }
     .batteryH1{
         position: absolute;
-        top: 15vh;
+        top: 15svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -154,7 +154,7 @@
 @media  (min-width: 351px)and (max-width: 380px) {
     @keyframes moveLeft {
         0% {
-            transform: translate(0, 200vh) ;
+            transform: translate(0, 200svh) ;
         }
         100% {
             transform:  rotate(90deg)scale(0.7);
@@ -162,7 +162,7 @@
     }
     .batteryH1{
         position: absolute;
-        top: 15vh;
+        top: 15svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -176,7 +176,7 @@
         border: 3px solid black;
         border-radius: 20px;
         width: 13rem;
-        top:55%;
+        top:50svh;
         left: 23%;
     }
 
@@ -192,7 +192,7 @@
 @media  (min-width: 381px)and (max-width: 400px) {
     @keyframes moveLeft {
         0% {
-            transform: translate(0, 200vh) ;
+            transform: translate(0, 200svh) ;
         }
         100% {
             transform:  rotate(90deg)scale(0.8);
@@ -200,7 +200,7 @@
     }
     .batteryH1{
         position: absolute;
-        top: 15vh;
+        top: 15svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -230,7 +230,7 @@
 @media  (min-width: 401px)and (max-width: 420px) {
     @keyframes moveLeft {
         0% {
-            transform: translate(0, 200vh) ;
+            transform: translate(0, 200svh) ;
         }
         100% {
             transform:  rotate(90deg)scale(0.8);
@@ -238,7 +238,7 @@
     }
     .batteryH1{
         position: absolute;
-        top: 15vh;
+        top: 15svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -268,7 +268,7 @@
 @media  (min-width: 421px)and (max-width: 768px) {
     @keyframes moveLeft {
         0% {
-            transform: translate(0, 200vh) ;
+            transform: translate(0, 200svh) ;
         }
         100% {
             transform:  rotate(90deg)scale(0.8);
@@ -276,7 +276,7 @@
     }
     .batteryH1{
         position: absolute;
-        top: 15vh;
+        top: 15svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;

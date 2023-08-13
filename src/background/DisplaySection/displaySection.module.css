@@ -9,7 +9,7 @@
 
 .title{
     position: absolute;
-    top: 10vh;
+    top: 10svh;
     left:6vw;
     font-size:50px;
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
@@ -55,7 +55,7 @@
     }
 
     .textBlockRight p {
-        font-size: 14px;
+        font-size: 12px;
     }
     .animation{
         animation: moveUp 1s ease;
@@ -80,7 +80,7 @@
 
     .textBlockRight {
         width: 50vw;
-        top:20vh;
+        top:20svh;
     }
 
     .textBlockRight h2 {
@@ -88,7 +88,7 @@
     }
 
     .textBlockRight p {
-        font-size: 17px;
+        font-size: 15px;
     }
     .animation{
         animation: moveUp 1s ease;
@@ -128,7 +128,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);

@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    bottom:8vh;
+    bottom:8svh;
     left: 5vw;
     width: 40vw;
 }
@@ -28,7 +28,7 @@
 .textContainer {
     width:100vw;
     position: absolute;
-    top:10vh;
+    top:10svh;
     left: 5vw;
 }
 .movingText{
@@ -40,14 +40,14 @@
 @media (min-width:280px) and (max-width: 359px) {
     .textBlockLeft{
         width: 100%;
-        top: 10vh;
+        top: 10svh;
     }
 
     .textBlockLeft h2 {
-        font-size: 13px;
+        font-size: 12px;
     }
     .textBlockLeft p{
-        font-size: 11px;
+        font-size: 10px;
         width: 90%;
     }
     .textContainer{
@@ -74,14 +74,14 @@
 @media (min-width:360px) and (max-width: 400px) {
     .textBlockLeft{
         width: 100%;
-        top: 10vh;
+        top: 10svh;
     }
 
     .textBlockLeft h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
     .textBlockLeft p{
-        font-size: 14px;
+        font-size: 12px;
         width: 60%;
     }
     .textContainer{
@@ -98,7 +98,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);
@@ -108,7 +108,7 @@
 @media (min-width:401px) and (max-width: 767px) {
     .textBlockLeft{
         width: 100%;
-        top: 10vh;
+        top: 10svh;
     }
 
     .textBlockLeft h2 {
@@ -132,7 +132,7 @@
 
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);
@@ -161,7 +161,7 @@
     }
     @keyframes moveUp {
         0%{
-            transform: translateY(100vh);
+            transform: translateY(100svh);
         }
         100%{
             transform: translateY(0);
