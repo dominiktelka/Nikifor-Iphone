@@ -50,13 +50,14 @@ function App() {
 
     const currentSectionNumber = generateSections(scrollPercentage);
 
+
     return (
         <div className={styles.mainContainer}>
 
             <LoadingScreen isVisible={isLoading}/>
             <Suspense>
                 <LoadingUpdater setIsLoading={setIsLoading}/>
-                <Background currentSectionNumber={currentSectionNumber} nodes={nodes} materials={materials}/>
+                <Background calculateSectionRange={calculateSectionRange} sectionsAmount={16} currentSectionNumber={currentSectionNumber} nodes={nodes} materials={materials} scrollPercentage={scrollPercentage}/>
 
                 <div className={isInteractive ? styles.sceneContainer : styles.sceneContainerActive}>
                     <Scene scrollPercentage={scrollPercentage} isInteractive={isInteractive} nodes={nodes} materials={materials} currentSectionNumber={currentSectionNumber}/>

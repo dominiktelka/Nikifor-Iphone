@@ -13,53 +13,29 @@ import CameraSection from "./CameraSection/CameraSection";
 import ColorSection from "./ColorSection/ColorSection";
 
 
-export default function Background({ currentSectionNumber , materials}) {
-    // const [prevSectionNumber, setPrevSectionNumber] = useState(currentSectionNumber);
-    //
-    // const getSectionAnimation = (sectionNumber) => {
-    //     if (sectionNumber === currentSectionNumber) {
-    //         return `${styles.expandCollapse}`;
-    //     }
-    //     if (sectionNumber === prevSectionNumber) {
-    //         return `${styles.expandCollapse}`;
-    //     }
-    //     return "";
-    // };
-    //
-    // const sectionStyles = Array.from({ length: 16 }).map((_, index) => {
-    //     const isVisible = currentSectionNumber === index + 1;
-    //     const animationClass = getSectionAnimation(index + 1);
-    //
-    //     return {
-    //         height: isVisible ? "100vh" : "0",
-    //         width: "100vw",
-    //         overflow: "hidden",
-    //         transition: "none",
-    //         animation: `${styles.smoothTransition} ${animationClass}`,
-    //     };
-    // });
-    //
-    // useEffect(() => {
-    //     if (currentSectionNumber !== prevSectionNumber) {
-    //         setPrevSectionNumber(currentSectionNumber);
-    //     }
-    // }, [currentSectionNumber]);
-    //
-    //
+export default function Background({calculateSectionRange, currentSectionNumber , materials,scrollPercentage, sectionsAmount}) {
 
 
-    const sectionStyles = Array.from({ length: 16 }).map((_, index) => {
-        const isVisible = currentSectionNumber === index + 1;
-        const height = isVisible ? "100svh" : "0";
+    const sectionStyles = Array.from({ length: sectionsAmount }).map((_, index) => {
+        const { startPercentage, endPercentage } = calculateSectionRange(index + 1);
+
+        // Przelicz scrollPercentage na skalę 0-100
+        const scaledScrollPercentage = scrollPercentage * 100;
+
+        // Oblicz, czy sekcja jest widoczna
+        const isVisible = scaledScrollPercentage >= startPercentage && scaledScrollPercentage <= endPercentage;
+
+        // Oblicz wartość opacity tylko w obrębie widocznej sekcji
+        const opacity = isVisible ? 1 - (scaledScrollPercentage - startPercentage) / (endPercentage - startPercentage) : 0;
+
         return {
-            height,
-            width: "100svw",
-            overflow: "hidden",
-            transition: "height 0.5s linear",
+            height: '100svh',
+            width: '100vw',
+            overflow: 'hidden',
+            opacity: opacity,
             position: 'absolute',
         };
     });
-
     return (
         <>
             {sectionStyles.map((style, index) => (
