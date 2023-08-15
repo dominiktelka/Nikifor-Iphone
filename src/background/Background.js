@@ -1,5 +1,3 @@
-import styles from './Background.module.css'
-import {useEffect, useState} from "react";
 import QuoteSection from "./Quote/QuoteSection";
 import HeroSection from "./HeroSection/HeroSection";
 import DesignSection from "./DesignSection/DesignSection";
@@ -14,8 +12,6 @@ import ColorSection from "./ColorSection/ColorSection";
 
 
 export default function Background({calculateSectionRange, currentSectionNumber , materials,scrollPercentage, sectionsAmount}) {
-
-
     const getOpacity = (scrollPercentage, startPercentage, endPercentage) => {
         const opacityMinimal = 0;
         const opacityMaximal = 1;
@@ -23,18 +19,17 @@ export default function Background({calculateSectionRange, currentSectionNumber 
         if (scrollPercentage < startPercentage) return opacityMaximal;
         if (scrollPercentage > endPercentage) return opacityMinimal;
 
-        const opacity = opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal) + scrollPercentage/100 ;
-        return opacity;
-    };
+        return opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal);
 
+    };
+//@todo look at getOpacity function cuz there is some problem with swaping between sections, if the secion have higher index the oapcity change faster, before end of section range
     const sectionStyles = Array.from({ length: sectionsAmount }).map((_, index) => {
         const { startPercentage, endPercentage } = calculateSectionRange(index + 1);
         // Przelicz scrollPercentage na skalę 0-100
         const scaledScrollPercentage = scrollPercentage * 100;
-
+        console.log(startPercentage,endPercentage)
         // Oblicz wartość opacity tylko w obrębie widocznej sekcji
         const opacity = (currentSectionNumber -1) === index ? getOpacity(scaledScrollPercentage, startPercentage, endPercentage) : 0;
-
         return {
             height: '100vh',
             width: '100vw',
@@ -43,6 +38,7 @@ export default function Background({calculateSectionRange, currentSectionNumber 
             position: 'absolute',
         };
     });
+
     return (
         <>
             {sectionStyles.map((style, index) => (

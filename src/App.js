@@ -28,9 +28,9 @@ function App() {
     };
 
     const calculateSectionRange = (sectionNumber) => {
-        const sectionPercentage = 100 / 16;
-        const startPercentage = (sectionNumber - 1) * sectionPercentage;
-        const endPercentage = sectionNumber * sectionPercentage;
+        const sectionPercentage = 100 / 15;
+        const startPercentage = (sectionNumber -1) * sectionPercentage - 0.01;
+        const endPercentage = sectionNumber * sectionPercentage - 0.01;
         return { startPercentage, endPercentage };
     };
 
@@ -49,7 +49,7 @@ function App() {
     };
 
     const currentSectionNumber = generateSections(scrollPercentage);
-
+    console.log(scrollPercentage)
 
     return (
         <div className={styles.mainContainer}>
