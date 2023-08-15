@@ -16,20 +16,27 @@ import ColorSection from "./ColorSection/ColorSection";
 export default function Background({calculateSectionRange, currentSectionNumber , materials,scrollPercentage, sectionsAmount}) {
 
 
+    const getOpacity = (scrollPercentage, startPercentage, endPercentage) => {
+        const opacityMinimal = 0;
+        const opacityMaximal = 1;
+
+        if (scrollPercentage < startPercentage) return opacityMaximal;
+        if (scrollPercentage > endPercentage) return opacityMinimal;
+
+        const opacity = opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal) + scrollPercentage/100 ;
+        return opacity;
+    };
+
     const sectionStyles = Array.from({ length: sectionsAmount }).map((_, index) => {
         const { startPercentage, endPercentage } = calculateSectionRange(index + 1);
-
         // Przelicz scrollPercentage na skalę 0-100
         const scaledScrollPercentage = scrollPercentage * 100;
 
-        // Oblicz, czy sekcja jest widoczna
-        const isVisible = scaledScrollPercentage >= startPercentage && scaledScrollPercentage <= endPercentage;
-
         // Oblicz wartość opacity tylko w obrębie widocznej sekcji
-        const opacity = isVisible ? 1 - (scaledScrollPercentage - startPercentage) / (endPercentage - startPercentage) : 0;
+        const opacity = (currentSectionNumber -1) === index ? getOpacity(scaledScrollPercentage, startPercentage, endPercentage) : 0;
 
         return {
-            height: '100svh',
+            height: '100vh',
             width: '100vw',
             overflow: 'hidden',
             opacity: opacity,
@@ -56,7 +63,6 @@ export default function Background({calculateSectionRange, currentSectionNumber 
             ))}
         </>
     );
-
 
     // return (
     //
