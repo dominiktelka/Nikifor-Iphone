@@ -268,20 +268,54 @@
     }
 }
 @media  (min-width:481px) and (max-width: 768px) {
-.text{
-    font-size: 10px;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-}
+    .text {
+        font-size: 10px;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+    }
+    .text span {
+        animation: fadeInAnimation 2.5s ease forwards;
+        color: whitesmoke;
+        background-color: transparent;
+        border-radius: 30px;
+        padding: 4px 20px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
+        /*margin: 5px;*/
+        box-shadow: 0 0 10px white;
+        align-items: center;
+    }
+    .text span:nth-child(1) {
+        position: absolute;
+        top: 5svh;
+        left: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(2) {
+        position: absolute;
+        top: 5svh;
+        right: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(3) {
+        position: absolute;
+        bottom: 5svh;
+        left: 15vw;
+        width: 20vw;
+    }
+    .text span:nth-child(4) {
+        position: absolute;
+        bottom: 5svh;
+        right: 15vw;
+        width: 20vw;
+    }
     .section h1{
         font-size: 48px;
         bottom: -3svh;
     }
     .imgContainer{
-        width:35%;
+        width:65%;
         position: absolute;
-        top: 55%;
+        top: 60%;
         left:50%;
         transform: translate(-50%,-50%);
         animation: glow 3s ease infinite;
@@ -302,7 +336,61 @@
             transform: translateY(0);
         }
     }
-
 }
+@media (min-width: 769px){
+    .text{
+        height: 40svh;
+        font-size: 16px;
+        width: 100vw;
+        position: absolute;
+        top: 0;
 
+    }
+    .text span{
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        width: 12vw;
+        height: 30svh;
+        color: whitesmoke;
+        background-color: transparent;
+        border-radius: 30px;
+        padding: 4px 15px; /* Dodajemy trochę paddingu dla lepszego wyglądu */
+        box-shadow: 0 0 10px white;
+        align-items: center;
+
+    }
+    .text span:nth-child(1) {
+        position: absolute;
+        top: 10svh;
+        left: 10vw;
+    }
+    .text span:nth-child(2) {
+        position: absolute;
+        top: 55svh;
+        right: 10vw;
+    }
+    .text span:nth-child(3) {
+        position: absolute;
+        top: 55svh;
+        left: 10vw;
+    }
+    .text span:nth-child(4) {
+        position: absolute;
+        top: 10svh;
+        right: 10vw;
+    }
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100svh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
 

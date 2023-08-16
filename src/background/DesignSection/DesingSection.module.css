@@ -42,3 +42,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100svh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }

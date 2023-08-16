@@ -28,10 +28,10 @@ html, body {touch-action: none;}
     border-radius: 8px;
     padding: 10px 20px;
     position: absolute;
-    left: 43.5vw;
-    bottom: 40px;
+    left: 44.3vw;
+    bottom: 5svh;
     font-size: 24px;
-    color: white;
+    color: whitesmoke;
     transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 .button360:hover {
@@ -71,12 +71,37 @@ html, body {touch-action: none;}
 @media (min-width: 280px) and (max-width: 330px){
     .button360{
         left: 20%;
-        bottom: 5vh;
+        bottom: 5svh;
         }
 }
 @media (min-width: 331px) and (max-width: 768px) {
     .button360{
         left: 28%;
-        bottom: 5vh;
+        bottom: 5svh;
     }
 }
+
+.animation{
+    animation: moveUp 1s ease;
+}
+
+@keyframes moveUp {
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/*.button2{*/
+/*    background-color: transparent; !* Twój kolor tła *!*/
+/*    width: 10vw;*/
+/*    height: 3vh;*/
+/*    margin: 0 auto; !* Wycentrowanie w poziomie *!*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 30%;*/
+/*    color: whitesmoke;*/
+/*    z-index: 2;*/
+/*}*/

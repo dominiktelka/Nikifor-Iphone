@@ -12,7 +12,7 @@
     left: 35%;
     top: 50svh;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 2;
 }
 .colorButton{
     list-style: none;
@@ -147,5 +147,6 @@
     }
 
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+
 }

@@ -9,31 +9,38 @@ import {ColorContextProvider} from "./ColorContex/ColorContext";
 import PricingSection from "./PricingSection/PricingSection";
 import CameraSection from "./CameraSection/CameraSection";
 import ColorSection from "./ColorSection/ColorSection";
+import React, {useEffect, useState} from "react";
+import styles from './Background.module.css'
 
 
-export default function Background({calculateSectionRange, currentSectionNumber , materials,scrollPercentage, sectionsAmount}) {
+
+
+export default function Background({calculateSectionRange, currentSectionNumber , materials,scrollPercentage, sectionsAmount,setRequestScrollToSection}) {
+
+
+
     const getOpacity = (scrollPercentage, startPercentage, endPercentage) => {
-        const opacityMinimal = 0;
+
+        const opacityMinimal = 0.2;
         const opacityMaximal = 1;
 
         if (scrollPercentage < startPercentage) return opacityMaximal;
         if (scrollPercentage > endPercentage) return opacityMinimal;
 
-        return opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal);
+        return opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal) + 0.0012;
 
     };
-//@todo look at getOpacity function cuz there is some problem with swaping between sections, if the secion have higher index the oapcity change faster, before end of section range
+
     const sectionStyles = Array.from({ length: sectionsAmount }).map((_, index) => {
         const { startPercentage, endPercentage } = calculateSectionRange(index + 1);
         // Przelicz scrollPercentage na skalę 0-100
         const scaledScrollPercentage = scrollPercentage * 100;
-        console.log(startPercentage,endPercentage)
         // Oblicz wartość opacity tylko w obrębie widocznej sekcji
-        const opacity = (currentSectionNumber -1) === index ? getOpacity(scaledScrollPercentage, startPercentage, endPercentage) : 0;
+        const opacity = (currentSectionNumber -1) === index ? getOpacity(scaledScrollPercentage, startPercentage, endPercentage): 0;
+
         return {
-            height: '100vh',
+            height: '100svh',
             width: '100vw',
-            overflow: 'hidden',
             opacity: opacity,
             position: 'absolute',
         };
@@ -44,7 +51,7 @@ export default function Background({calculateSectionRange, currentSectionNumber 
             {sectionStyles.map((style, index) => (
                 <div key={index} style={style}>
                     {index === 0 && <QuoteSection/>}
-                    {index === 1 && <HeroSection/>}
+                    {index === 1 && <HeroSection currentSectionNumber={currentSectionNumber}/>}
                     {index === 2 && <DesignSection currentSectionNumber={currentSectionNumber}/>}
                     {index === 3 && <DisplaySection currentSectionNumber={currentSectionNumber}/>}
                     {index === 4 && <SecondDisplaySection currentSectionNumber={currentSectionNumber}/>}
@@ -57,47 +64,9 @@ export default function Background({calculateSectionRange, currentSectionNumber 
                     </ColorContextProvider>
                 </div>
             ))}
+            {currentSectionNumber === 16 ? '' : <button className={styles.button} onClick={() => setRequestScrollToSection(currentSectionNumber)}>next </button> }
+
         </>
     );
 
-    // return (
-    //
-    //     <>
-    //         <div className={styles.stripe} style={{ height: `${currentSectionNumber === 1 ? 100 : 0}vh`, width:'100vw' }}>
-    //             <QuoteSection/>
-    //         </div>
-    //         <div className={styles.stripe} style={{height: `${currentSectionNumber === 2 ? 100 : 0}vh`, width:'100vw'}}>
-    //             <HeroSection/>
-    //         </div>
-    //         <div className={styles.stripe} style={{height: `${currentSectionNumber === 3 ? 100 : 0}vh`, width:'100vw'}}>
-    //             <DesignSection currentSectionNumber={currentSectionNumber}/>
-    //         </div>
-    //         <div className={styles.stripe} style={{height: `${currentSectionNumber === 4 ? 100 : 0}vh`, width:'100vw' }}>
-    //             <DisplaySection currentSectionNumber={currentSectionNumber}/>
-    //         </div>
-    //         <div className={styles.stripe} style={{height: `${currentSectionNumber === 5 ? 100 : 0}vh`, width:'100vw' }}>
-    //             <SecondDisplaySection currentSectionNumber={currentSectionNumber}/>
-    //         </div>
-    //         <div className={styles.stripe} style={{height: `${currentSectionNumber === 6 ? 100 : 0}vh`, width:'100vw' }}>
-    //             <ProcessorSection currentSectionNumber={currentSectionNumber}/>
-    //         </div>
-    //         <div className={styles.stripe} style={{height: `${currentSectionNumber === 7 ? 100 : 0}vh`, width:'100vw'}}>
-    //             <BatterySection currentSectionNumber={currentSectionNumber}/>
-    //         </div>
-    //             <ColorContextProvider materials={materials}>
-    //                 <div className={styles.stripe} style={{ height: `${sectionsVisible ? 100 : 0}vh`, width:'100vw' }}>
-    //                     <ColorSection currentSection={currentSectionNumber} />
-    //                 </div>
-    //                 <div className={styles.stripe} style={{ height: `${currentSectionNumber === 14 ? 100 : 0}vh`, width:'100vw' }}>
-    //                         <CameraSection currentSectionNumber={currentSectionNumber} />
-    //                 </div>
-    //                 <div className={styles.stripe} style={{ height: `${currentSectionNumber === 15 ? 100 : 0}vh`, width:'100vw' }}>
-    //                     <PricingSection currentSectionNumber={currentSectionNumber}/>
-    //                 </div>
-    //             </ColorContextProvider>
-    //         {/*<div className={styles.stripe} style={{height: `${currentSectionNumber === 16 ? 100 : 0}vh`, width: `${currentSectionNumber === 16 ? 100 : 0}vw` }}>*/}
-    //         {/*    /!*<InteractionSection/>*!/*/}
-    //         {/*</div>*/}
-    //     </>
-    // );
 }

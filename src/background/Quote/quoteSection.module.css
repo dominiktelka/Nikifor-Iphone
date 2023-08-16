@@ -24,26 +24,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.down{
-    position: absolute;
-    bottom: 30svh;
-    animation: bounceAnimation 1s infinite alternate;
-    transition: transform 0.2s linear;
-}
 @keyframes fadeInAnimation {
     to {
         opacity: 1;
         transform: translateY(0); /* Zmieniamy transformację translateY na 0, aby elementy pojawiały się z dolu */
     }
 }
-@keyframes bounceAnimation {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-}
+
 .text:nth-child(1) span {
     animation-delay: 0s;
 }
@@ -81,13 +68,7 @@
     .text:nth-child(5) {
         transform: translateX(25vw);
     }
-    .down{
-        position: absolute;
-        bottom:10svh;
-        animation: bounceAnimation 1s infinite alternate;
-        transition: transform 0.2s linear;
-        color: whitesmoke;
-    }
+
 }
 @media (min-width: 361px) and (max-width: 480px) {
     .text {
@@ -101,13 +82,6 @@
     .text:nth-child(5) {
         transform: translateX(25vw);
     }
-    .down{
-        position: absolute;
-        bottom:10svh;
-        animation: bounceAnimation 1s infinite alternate;
-        transition: transform 0.2s linear;
-        color: whitesmoke;
-    }
 }
 @media (min-width: 481px) and (max-width: 768px) {
     .text {
@@ -120,13 +94,6 @@
     }
     .text:nth-child(5) {
         transform: translateX(25vw);
-    }
-    .down{
-        position: absolute;
-        bottom:10svh;
-        animation: bounceAnimation 1s infinite alternate;
-        transition: transform 0.2s linear;
-        color: whitesmoke;
     }
 }
 @media (min-width: 769px) and (max-width: 1024px) {

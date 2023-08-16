@@ -5,6 +5,13 @@ export default function ScrollControls({sectionsAmount, requestScrollToSection, 
 
     const mainContainerRef = useRef()
 
+    useEffect(() => {
+        if (requestScrollToSection) {
+            mainContainerRef.current.children.item(requestScrollToSection).scrollIntoView({behavior: 'smooth'})
+            setRequestScrollToSection(null)
+        }
+    }, [requestScrollToSection])
+
 
     const handleScroll = (e) => {
         const scrollPercentage = e.target.scrollTop / (e.target.scrollHeight - e.target.clientHeight)

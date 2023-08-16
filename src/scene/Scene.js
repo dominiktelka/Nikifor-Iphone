@@ -37,7 +37,7 @@ const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSection
         ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
         : { camera: { fov: 60 } };
 
-    const sectionsVisible = [1, 2, 3, 4, 5, 6,7,15].includes(currentSectionNumber);
+    const sectionsVisible = [1, 2, 3, 4, 5, 6,7,15,16].includes(currentSectionNumber);
 
     return (
         <>

@@ -5,11 +5,11 @@
     overflow: hidden; /* Dodajemy overflow: hidden, aby bateria nie wychodziła poza sekcję */
 }
 .animation{
-    animation: moveUp 1s 1;
+    animation: moveUp 0.2s 1 linear;
     animation-fill-mode: forwards;
 }
 .animationMoveLeft{
-    animation: moveLeft 1s 1;
+    animation: moveLeft 0.2s 1 linear;
     animation-fill-mode: forwards;
 }
 .batteryH1{
@@ -20,22 +20,6 @@
     font-size: 70px;
     color: lightgray;
     width: 30vw;
-}
-@keyframes moveUp {
-    0%{
-        transform: translateY(50svh);
-    }
-    100%{
-        transform: translateY(-15svh);
-    }
-}
-@keyframes moveLeft {
-    0%{
-        transform: translateX(50svh);
-    }
-    100%{
-        transform: translateX(-15svh);
-    }
 }
 .battery{
     position: absolute;
@@ -63,6 +47,22 @@
     background-color: black;
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     border-radius: 20px;
+}
+@keyframes moveUp {
+    0%{
+        transform: translateY(50svh);
+    }
+    100%{
+        transform: translateY(-15svh);
+    }
+}
+@keyframes moveLeft {
+    0%{
+        transform: translateX(50svh);
+    }
+    100%{
+        transform: translateX(-15svh);
+    }
 }
 @keyframes fadeIn {
     from {
@@ -292,6 +292,26 @@
         width: 13rem;
         top:60%;
         left: 23%;
+    }
+
+    .battery li.active{
+        animation: fadeIn infinite linear forwards;
+        width: 100%;
+        height: 5rem;
+        background-color: black;
+        background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
+        border-radius: 10px;
+    }
+}
+@media (min-width: 767px){
+
+    .battery{
+        list-style: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 13rem;
+        top:20%;
     }
 
     .battery li.active{

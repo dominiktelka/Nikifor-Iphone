@@ -1,0 +1,76 @@
+.mainContainer {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: appear 1s 1s both;
+}
+
+.text {
+    color: white;
+    animation: textAnimation 3s alternate infinite ease-in-out 1s;
+}
+
+.arrowDown {
+    width: 5vw;
+    aspect-ratio: 1/1;
+    background-color: white;
+    clip-path: polygon(0 25%, 50% 75%, 100% 25%, 100% 50%, 50% 100%, 0 50%);
+    animation: arrowAnimation 3s alternate infinite ease-in-out 1s;
+}
+.arrowUp {
+    width: 5vw;
+    aspect-ratio: 1/1;
+    background-color: white;
+    clip-path: polygon(0 25%, 50% 75%, 100% 25%, 100% 50%, 50% 100%, 0 50%);
+    animation: arrowAnimation 3s alternate infinite ease-in-out 1s;
+}
+/*.arrowUp {*/
+/*    width: 5vw;*/
+/*    aspect-ratio: 1/1;*/
+/*    background-color: white;*/
+/*    clip-path: polygon(0 25%, 50% 75%, 100% 25%, 100% 50%, 50% 100%, 0 50%);*/
+/*    animation: arrowAnimation2 3s alternate infinite ;*/
+/*}*/
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes textAnimation {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3svh);
+    }
+}
+
+@keyframes arrowAnimation {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-2svh);
+    }
+}
+/*@keyframes arrowAnimation2 {*/
+/*    0% {*/
+/*        transform: translateY(0);*/
+/*    }*/
+
+/*    100% {*/
+/*        transform: translateY(-3svh) rotate(180deg);*/
+/*    }*/
+/*}*/

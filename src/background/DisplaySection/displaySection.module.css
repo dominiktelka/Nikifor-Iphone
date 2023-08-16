@@ -153,3 +153,17 @@
         font-size: 17px;
     }
 }
+@media(min-width: 1024px){
+    .animation{
+        animation: moveUp 1s ease;
+    }
+
+    @keyframes moveUp {
+        0%{
+            transform: translateY(100vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}

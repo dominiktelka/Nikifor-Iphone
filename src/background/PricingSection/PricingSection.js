@@ -9,7 +9,7 @@ const PricingSection = ({currentSectionNumber}) => {
     const { currentColor, changeColorContext } = useContext(ColorContext);
 
     useEffect(() => {
-        sectionRef.current.style.backgroundColor = `rgba(${currentColor.rgbColor},0.8)`;
+        sectionRef.current.style.backgroundColor = `rgba(${currentColor.rgbColor})`;
 
     }, [currentColor]);
 
