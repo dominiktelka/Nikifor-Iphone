@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import styles from './colorSection.module.css';
 import {ColorContext} from "../ColorContex/ColorContext";
 
-const ColorSection = ({ currentSection }) => {
+const ColorSection = ({ currentSection,scrollPercentage }) => {
 
     const sectionRef = useRef(null);
     const rightRef = useRef(null);
     const leftRef = useRef(null);
     const textRef = useRef(null);
     const { currentColor, changeColorContext } = useContext(ColorContext);
+    console.log(scrollPercentage)
 
     useEffect(() => {
         let rightElem = rightRef.current;
@@ -16,12 +17,13 @@ const ColorSection = ({ currentSection }) => {
         let textElem = textRef.current;
 
         textElem.innerText = currentColor.text;
-        rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.4)`;
-        leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
+        rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
+        leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor},0.4)`;
 
-
-    }, [currentColor]);
-
+    }, [currentColor,scrollPercentage]);
+    /*
+    @todo maybe try to implement new information about animation etc in []colors
+    */
 
     const colors = [
         ["#9BB5CE", "Sierra Blue", "155, 181, 206"],

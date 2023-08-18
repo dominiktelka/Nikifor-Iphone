@@ -36,6 +36,7 @@
     text-transform: uppercase;
     font-weight:600;
     font-size: 80px;
+
 }
 @media (min-width:280px) and (max-width: 350px){
     .title2 span {

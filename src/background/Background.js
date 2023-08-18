@@ -11,6 +11,7 @@ import CameraSection from "./CameraSection/CameraSection";
 import ColorSection from "./ColorSection/ColorSection";
 import React, {useEffect, useState} from "react";
 import styles from './Background.module.css'
+import InteractionSection from "../InteractionSection/InteractionSection";
 
 
 
@@ -21,13 +22,13 @@ export default function Background({calculateSectionRange, currentSectionNumber 
 
     const getOpacity = (scrollPercentage, startPercentage, endPercentage) => {
 
-        const opacityMinimal = 0.2;
+        const opacityMinimal = 0;
         const opacityMaximal = 1;
 
         if (scrollPercentage < startPercentage) return opacityMaximal;
         if (scrollPercentage > endPercentage) return opacityMinimal;
 
-        return opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal) + 0.0012;
+        return opacityMaximal - ((scrollPercentage - startPercentage) / (endPercentage - startPercentage)) * (opacityMaximal - opacityMinimal) + 0.0015;
 
     };
 
@@ -57,14 +58,15 @@ export default function Background({calculateSectionRange, currentSectionNumber 
                     {index === 4 && <SecondDisplaySection currentSectionNumber={currentSectionNumber}/>}
                     {index === 5 && <ProcessorSection currentSectionNumber={currentSectionNumber}/>}
                     {index === 6 && <BatterySection currentSectionNumber={currentSectionNumber}/>}
-                    <ColorContextProvider materials={materials}>
-                        {index >= 7 && index <= 12 && <ColorSection currentSection={currentSectionNumber} />}
-                        {index === 13 && <CameraSection currentSectionNumber={currentSectionNumber} />}
-                        {index === 14 &&<PricingSection currentSectionNumber={currentSectionNumber}/>}
-                    </ColorContextProvider>
                 </div>
             ))}
-            {currentSectionNumber === 16 ? '' : <button className={styles.button} onClick={() => setRequestScrollToSection(currentSectionNumber)}>next </button> }
+            <ColorContextProvider materials={materials}>
+                {currentSectionNumber>= 8 && currentSectionNumber <= 13 && <ColorSection currentSection={currentSectionNumber} scrollPercentage={scrollPercentage}/>}
+                {currentSectionNumber === 14 && <CameraSection currentSectionNumber={currentSectionNumber} />}
+                {currentSectionNumber === 15 &&<PricingSection currentSectionNumber={currentSectionNumber}/>}
+            </ColorContextProvider>
+            {currentSectionNumber === 16 && <InteractionSection scrollPercentage={scrollPercentage}/>}
+            {currentSectionNumber === 16 ? '' : <button className={styles.button} onClick={() => setRequestScrollToSection(currentSectionNumber)}>Next </button> }
 
         </>
     );

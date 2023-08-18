@@ -16,6 +16,8 @@
     bottom:8svh;
     left: 5vw;
     width: 40vw;
+    z-index: 1;
+    pointer-events: none;
 }
 .textBlockLeft h2{
     font-size: 30px;
@@ -30,6 +32,8 @@
     position: absolute;
     top:10svh;
     left: 5vw;
+    z-index: 1;
+    pointer-events: none;
 }
 .movingText{
     font-size: 50px;

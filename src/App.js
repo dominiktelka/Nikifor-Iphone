@@ -51,7 +51,7 @@ function App() {
     };
 
     const currentSectionNumber = generateSections(scrollPercentage);
-    console.log(requestScrollToSection)
+    console.log(`currentSectionNumber: ${currentSectionNumber}`, scrollPercentage)
 
 
 
@@ -63,7 +63,7 @@ function App() {
                 <LoadingUpdater setIsLoading={setIsLoading}/>
                 <Background calculateSectionRange={calculateSectionRange} sectionsAmount={16} currentSectionNumber={currentSectionNumber} nodes={nodes} materials={materials} scrollPercentage={scrollPercentage} setRequestScrollToSection={setRequestScrollToSection}/>
 
-                <div className={isInteractive ? styles.sceneContainer : styles.sceneContainerActive}>
+                <div className={isInteractive ? styles.sceneContainer : styles.sceneContainerActive} style={{opacity:`${currentSectionNumber !== 16 ? 1 : 0.8}`}}>
                     <Scene scrollPercentage={scrollPercentage} isInteractive={isInteractive} nodes={nodes} materials={materials} currentSectionNumber={currentSectionNumber}/>
                 </div>
 
@@ -81,7 +81,6 @@ function App() {
                 {/*    setRequestScrollToSection(currentSectionNumber +1)*/}
                 {/*}}>previous </button> }*/}
 
-                //@todo on button when u clcik enable360 and next u click next iphone in next stage will be in 360mode cuz isInteracitve is true
                 {/*{currentSectionNumber === 16 ? '' : <SwipeDownIndicator currentSectionNumber={currentSectionNumber}/>}*/}
             </Suspense>
 

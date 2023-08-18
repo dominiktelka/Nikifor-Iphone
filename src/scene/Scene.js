@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Canvas, useFrame, } from "@react-three/fiber";
-import {Environment, OrbitControls, Sparkles,} from "@react-three/drei";
+import {Environment, Float, OrbitControls, Sparkles,} from "@react-three/drei";
 import { Model } from "./Model";
 import { getProject } from "@theatre/core";
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from "@theatre/r3f";
@@ -44,7 +44,11 @@ const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSection
             <Canvas {...canvasProps}>
                 <ambientLight intensity={1} />
                 <Environment preset="warehouse" />
-                <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                {
+                    sectionsVisible ? <Float>
+                        <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                    </Float> : <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                }
                 { sectionsVisible ? <Sparkles
                     scale={20}
                     amount={200}

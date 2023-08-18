@@ -1,14 +1,20 @@
 .button{
-    background-color: transparent; /* Twój kolor tła */
+    background-color: transparent;
     width: 10vw;
     height: 3vh;
-    margin: 0 auto; /* Wycentrowanie w poziomie */
+    margin: 1svh auto;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     color: whitesmoke;
     z-index: 2;
+    border-radius: 10px;
+}
+@media(max-width: 767px){
+    .button{
+        width: 15vw;
+    }
 }
 
 

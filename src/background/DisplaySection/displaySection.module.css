@@ -16,6 +16,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
+    pointer-events: none;
 }
 
 .textBlockRight{
@@ -23,6 +24,7 @@
     text-align: center;
     right: 5vw;
     width: 40%;
+    pointer-events: none;
 }
 
 .textBlockRight h2{
@@ -40,22 +42,24 @@
 }
 @media (min-width:280px) and (max-width: 350px){
     .title {
-        font-size: 25px;
+        font-size: 30px;
         top: 0;
-        left: 45vw;
+        left: 30vw;
         text-align: center;
     }
 
     .textBlockRight {
-        width: 50vw;
+        width: 70vw;
+        z-index: 1;
+        height: 60svh;
     }
 
     .textBlockRight h2 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .textBlockRight p {
-        font-size: 12px;
+        font-size: 16px;
     }
     .animation{
         animation: moveUp 1s ease;
