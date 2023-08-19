@@ -5,18 +5,18 @@ import DisplaySection from "./DisplaySection/DisplaySection";
 import SecondDisplaySection from "./DisplaySection/SecondDisplaySection";
 import ProcessorSection from "./ProcessorSection/ProcessorSection";
 import BatterySection from "./BatterySection/BatterySection";
-import {ColorContextProvider} from "./ColorContex/ColorContext";
 import PricingSection from "./PricingSection/PricingSection";
 import CameraSection from "./CameraSection/CameraSection";
 import ColorSection from "./ColorSection/ColorSection";
 import React, {useEffect, useState} from "react";
 import styles from './Background.module.css'
-import InteractionSection from "../InteractionSection/InteractionSection";
+import InteractionSection from "./InteractionSection/InteractionSection";
 
 
 
 
-export default function Background({calculateSectionRange, currentSectionNumber , materials,scrollPercentage, sectionsAmount,setRequestScrollToSection}) {
+
+export default function Background({calculateSectionRange, currentSectionNumber ,scrollPercentage, sectionsAmount,setRequestScrollToSection}) {
 
 
 
@@ -32,13 +32,10 @@ export default function Background({calculateSectionRange, currentSectionNumber 
 
     };
 
-    const sectionStyles = Array.from({ length: sectionsAmount }).map((_, index) => {
+    const sectionStyles = Array.from({ length: sectionsAmount-9 }).map((_, index) => {
         const { startPercentage, endPercentage } = calculateSectionRange(index + 1);
-        // Przelicz scrollPercentage na skalę 0-100
         const scaledScrollPercentage = scrollPercentage * 100;
-        // Oblicz wartość opacity tylko w obrębie widocznej sekcji
         const opacity = (currentSectionNumber -1) === index ? getOpacity(scaledScrollPercentage, startPercentage, endPercentage): 0;
-
         return {
             height: '100svh',
             width: '100vw',
@@ -46,7 +43,7 @@ export default function Background({calculateSectionRange, currentSectionNumber 
             position: 'absolute',
         };
     });
-
+    console.log(scrollPercentage)
     return (
         <>
             {sectionStyles.map((style, index) => (
@@ -60,14 +57,23 @@ export default function Background({calculateSectionRange, currentSectionNumber 
                     {index === 6 && <BatterySection currentSectionNumber={currentSectionNumber}/>}
                 </div>
             ))}
-            <ColorContextProvider materials={materials}>
-                {currentSectionNumber>= 8 && currentSectionNumber <= 13 && <ColorSection currentSection={currentSectionNumber} scrollPercentage={scrollPercentage}/>}
+
+            {scrollPercentage >= 0.45 && currentSectionNumber <= 13 && <div className={styles.slideIn} >
+                    <ColorSection currentSection={currentSectionNumber} scrollPercentage={scrollPercentage}/>
+            </div>}
                 {currentSectionNumber === 14 && <CameraSection currentSectionNumber={currentSectionNumber} />}
                 {currentSectionNumber === 15 &&<PricingSection currentSectionNumber={currentSectionNumber}/>}
-            </ColorContextProvider>
-            {currentSectionNumber === 16 && <InteractionSection scrollPercentage={scrollPercentage}/>}
-            {currentSectionNumber === 16 ? '' : <button className={styles.button} onClick={() => setRequestScrollToSection(currentSectionNumber)}>Next </button> }
-
+                {currentSectionNumber === 16 && <InteractionSection scrollPercentage={scrollPercentage}/>}
+            {currentSectionNumber === 16 ? (
+                ""
+            ) : (
+                <button
+                    className={`${styles.button} ${styles.appearAnimation}`}
+                    onClick={() => setRequestScrollToSection(currentSectionNumber)}
+                >
+                    Next
+                </button>
+            )}
         </>
     );
 

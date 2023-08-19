@@ -21,6 +21,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 2;
+    animation: moveUp 1s ease;
+}
+@keyframes moveUp {
+    from{
+        transform: translateY(100svh);
+    }
+    to{
+        transform: translateY(0svh);
+    }
 }
 .textContainer2{
     width:100%;
@@ -29,6 +38,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    transform: translateY(0);
 }
 .textContainer2 span{
     position: absolute;
@@ -38,23 +48,11 @@
     text-transform: capitalize;
     align-self: flex-end;
     text-align: right;
-    bottom: 4vh;
+    bottom: 8svh;
     padding: 0 3vw;
     /*animation-fill-mode: forwards;*/
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: moveUp 1s ease;
 }
-
-    .animation{
-        animation: moveUp 1s linear;
-    }
-
-    @keyframes moveUp {
-        0%{
-            transform: translateY(100svh);
-        }
-        100%{
-            transform: translateY(0);
-        }
-    }

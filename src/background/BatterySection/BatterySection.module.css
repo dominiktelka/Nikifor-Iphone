@@ -5,11 +5,11 @@
     overflow: hidden; /* Dodajemy overflow: hidden, aby bateria nie wychodziła poza sekcję */
 }
 .animation{
-    animation: moveUp 1s 1 linear;
+    animation: moveUp 1s 1 ease;
     animation-fill-mode: forwards;
 }
 .animationMoveLeft{
-    animation: moveLeft 1s 1 linear;
+    animation: moveLeft 1s 1 ease;
     animation-fill-mode: forwards;
 }
 .batteryH1{

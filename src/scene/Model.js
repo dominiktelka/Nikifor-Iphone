@@ -1,19 +1,16 @@
 import React from 'react'
 import {useGLTF} from '@react-three/drei'
+import {useFrame} from "@react-three/fiber";
+import * as THREE from "three";
 
 export function Model({props,isInteractive, nodes ,materials}) {
-  // const texture = useTexture('./model/textures/james.png')
-  // materials.Body.map = texture
-  // console.log(materials.Body)
-
-
 
 
 const scaleValue = isInteractive ? 1 :3.5
   return (
     <group {...props} dispose={null}>
       <group >
-        <group scale={[scaleValue, scaleValue, scaleValue]}>
+        <group scale={[scaleValue,scaleValue,scaleValue]}>
           <mesh geometry={nodes.Frame_Frame_0.geometry} material={materials.Frame} />
           <mesh geometry={nodes.Frame_Frame2_0.geometry} material={materials.Frame2} />
           <mesh geometry={nodes.Frame_Port_0.geometry} material={materials.Port} />

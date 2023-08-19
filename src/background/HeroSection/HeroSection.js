@@ -1,6 +1,7 @@
 import React from 'react';
-import backgroundVideo from "../../video/Ink - 21536.mp4";
+import backgroundVideo from '../../video/Ink - 21536.mp4';
 import styles from "./HeroSection.module.css";
+
 
 const HeroSection = ({ currentSectionNumber }) => {
 
@@ -14,6 +15,7 @@ const HeroSection = ({ currentSectionNumber }) => {
                         autoPlay
                         muted
                         loop
+                        playsInline
                     ></video>
                 </div>
             )}

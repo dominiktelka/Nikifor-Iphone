@@ -5,13 +5,8 @@ import {ColorContext} from "../ColorContex/ColorContext";
 
 
 const PricingSection = ({currentSectionNumber}) => {
-    const sectionRef = useRef(null);
-    const { currentColor, changeColorContext } = useContext(ColorContext);
 
-    useEffect(() => {
-        sectionRef.current.style.backgroundColor = `rgba(${currentColor.rgbColor})`;
-
-    }, [currentColor]);
+    const {changeColorContext } = useContext(ColorContext);
 
 
     let updateColor = (color, text, rgbColor) => {
@@ -24,7 +19,7 @@ const PricingSection = ({currentSectionNumber}) => {
     };
 
     return (
-            <div className={`${styles.pricingSection}`} ref={sectionRef}>
+            <div className={styles.pricingSection} >
                     <ul className={styles.Colors}>
                         <button className={styles.colorButton} onClick={() => updateColor("#9BB5CE", "Sierra Blue", "155, 181, 206")}/>
                         <button className={styles.colorButton} onClick={() => updateColor("#e0ca9b", "Gold", "249, 229, 201")}/>

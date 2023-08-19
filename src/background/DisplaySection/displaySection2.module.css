@@ -5,8 +5,9 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    background-color: black;
     color: white;
+    z-index: 2;
+    pointer-events: none;
 }
 .textBlockLeft{
     position: absolute;
@@ -14,7 +15,7 @@
     flex-direction: column;
     align-items: flex-start;
     bottom:8svh;
-    left: 5vw;
+    left: 4vw;
     width: 40vw;
     z-index: 1;
     pointer-events: none;
@@ -43,8 +44,9 @@
 }
 @media (min-width:280px) and (max-width: 359px) {
     .textBlockLeft{
-        width: 100%;
+        width: 95%;
         top: 10svh;
+
     }
 
     .textBlockLeft h2 {
@@ -77,16 +79,16 @@
 }
 @media (min-width:360px) and (max-width: 400px) {
     .textBlockLeft{
-        width: 100%;
+        width: 95%;
         top: 10svh;
     }
 
     .textBlockLeft h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
     .textBlockLeft p{
-        font-size: 12px;
-        width: 60%;
+        font-size: 15px;
+        width: 80%;
     }
     .textContainer{
         width: 100vw;

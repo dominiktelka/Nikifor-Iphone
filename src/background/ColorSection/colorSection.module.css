@@ -6,8 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 1.5s ease, opacity 2s ease;
 }
+
 
 .left{
 
@@ -24,19 +24,6 @@
     display: flex;
     transition: background-color 1.5s ease
 }
-
-@keyframes moveDown {
-    0%{
-
-    }
-    
-}
-
-/*@media screen and (max-width: 48em) {*/
-/*    display: none;*/
-/*}*/
-
-
 .center {
     width: 100%;
     text-align: center;

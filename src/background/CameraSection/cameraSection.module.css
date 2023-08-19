@@ -6,12 +6,12 @@
     overflow: hidden;
 }
 .v1{
-    position: absolute;
+    position: fixed;
     object-fit: cover;
     object-position: bottom;
 }
 .v2{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     object-fit: cover;
@@ -31,6 +31,10 @@
     font-size: 50px;
     text-transform: capitalize;
     animation-fill-mode: forwards;
+    letter-spacing: 2px;
+}
+.span:nth-child(2){
+    margin: 2svh 0;
 }
 @keyframes fadeInAnimation {
     0% {
@@ -38,7 +42,7 @@
     }
     100% {
         transform: translateX(-20vw) scale(1.6);
-    color: whitesmoke;
+        color: whitesmoke;
     }
 }
 @keyframes fadeInAnimation2 {
@@ -47,6 +51,7 @@
         width: 100%;
         height: 100svh;
         z-index: 2;
+        pointer-events: none;
 
 
     }

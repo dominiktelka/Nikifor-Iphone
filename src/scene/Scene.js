@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Canvas, useFrame, } from "@react-three/fiber";
 import {Environment, Float, OrbitControls, Sparkles,} from "@react-three/drei";
 import { Model } from "./Model";
@@ -9,6 +9,7 @@ import latest from './latest.json'
 import mobileAnimation from './mobileAnimation.json'
 import studio from "@theatre/studio";
 import extension from "@theatre/r3f/dist/extension";
+import {ColorContext} from "../background/ColorContex/ColorContext";
 
 // studio.initialize()
 // studio.extend(extension)
@@ -21,6 +22,7 @@ import extension from "@theatre/r3f/dist/extension";
 
 const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSectionNumber }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const { currentColor} = useContext(ColorContext);
 
     useEffect(() => {
         const handleResize = () => {
@@ -33,32 +35,34 @@ const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSection
 
     const demoSheet = getProject("Demo Project", { state: isMobile ? mobileAnimation : latest }).sheet("Demo Sheet");
 
-    const canvasProps = isInteractive
-        ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
-        : { camera: { fov: 60 } };
+    // const canvasProps = isInteractive
+    //     ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
+    //     : { camera: { fov: 60 } };
 
     const sectionsVisible = [1, 2, 3, 4, 5, 6,7,15,16].includes(currentSectionNumber);
+    const sparklesColor = `rgba(${currentColor.rgbColor}, 1)`;
 
     return (
         <>
-            <Canvas {...canvasProps}>
+            <Canvas >
                 <ambientLight intensity={1} />
                 <Environment preset="warehouse" />
-                {
-                    sectionsVisible ? <Float>
+                {sectionsVisible ?
+                    (<Float>
                         <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
-                    </Float> : <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
-                }
+                    </Float>) :
+                    (<Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                    )}
                 { sectionsVisible ? <Sparkles
-                    scale={20}
-                    amount={200}
+                    scale={30}
+                    amount={300}
                     position={[0, 0, 0]}
-                    size={4}
-                    color={'white'}/> : ''}
+                    size={5}
+                    color={sparklesColor}/> : ''}
                 {isInteractive ? (
                     <SheetProvider sheet={demoSheet}>
                         <ScrollToAnimationPasser scrollPercentage={scrollPercentage} />
-                        <PerspectiveCamera theatreKey="Camera" makeDefault position={[0, 0, 1]} fov={50}/>
+                        <PerspectiveCamera theatreKey="Camera" makeDefault position={[0, 0, 0]} fov={50}/>
                     </SheetProvider>
                 ) : (
                     <>

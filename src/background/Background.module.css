@@ -10,6 +10,20 @@
     color: whitesmoke;
     z-index: 2;
     border-radius: 10px;
+    cursor: pointer;
+}
+.appearAnimation {
+    animation: appear 1s 1s both;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 @media(max-width: 767px){
     .button{
@@ -19,4 +33,18 @@
 
 
 
+.slideIn{
+    animation: slideInAnimation 1.5s ease;
+}
 
+
+@keyframes slideInAnimation {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
