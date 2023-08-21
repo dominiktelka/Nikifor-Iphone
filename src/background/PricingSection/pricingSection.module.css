@@ -2,6 +2,14 @@
      width: 100vw;
      height: 100svh;
  }
+.opacityTransition {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.opacityTransition.fadeOut {
+    opacity: 0;
+}
 .Colors{
     display: flex;
     flex-direction: column;
@@ -46,14 +54,16 @@
      background-color: #215E7C;
  }
 .details{
-    width: 70%;
+    width: 30%;
     position: absolute;
-    right: -5vw;
+    right: 3vw;
     top: 20svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    user-select: none;
 }
  .animationMoveDown{
      animation: moveDown 0.5s 1;
@@ -91,13 +101,11 @@
     background-color: #0071e3;
     color: whitesmoke;
     cursor: pointer;
-    z-index: 1;
 }
 .btnLink{
     color: #0071e3;
     text-decoration: none;
     margin-left: 1.5rem;
-    z-index: 1;
 }
 .btnLink:hover {
      text-decoration: underline;
@@ -111,7 +119,7 @@
      .details{
          position: absolute;
          top: 0;
-         right: 15vw;
+         right: 35vw;
      }
      .subtitle {
          font-size: 14px;
@@ -133,7 +141,7 @@
     .details{
         position: absolute;
         top: 0;
-        right: 15vw;
+        right: 35vw;
     }
     .subtitle {
         font-size: 18px;

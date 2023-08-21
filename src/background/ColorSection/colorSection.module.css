@@ -35,6 +35,27 @@
     text-transform: uppercase;
     filter: brightness(0.8);
 }
+.opacityTransition {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.opacityTransition.fadeOut {
+    opacity: 0;
+}
+.animatingText {
+    animation: changeText 0.7s ease;
+}
+
+@keyframes changeText {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 
 @media  (max-width: 768px) {
     .center{

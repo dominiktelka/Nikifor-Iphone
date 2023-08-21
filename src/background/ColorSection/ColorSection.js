@@ -1,20 +1,22 @@
-import React, { useContext, useEffect, useRef} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import styles from './colorSection.module.css';
 import {ColorContext} from "../ColorContex/ColorContext";
 
 const ColorSection = ({ currentSection,scrollPercentage }) => {
-
+console.log(scrollPercentage)
     const sectionRef = useRef(null);
     const rightRef = useRef(null);
     const leftRef = useRef(null);
     const textRef = useRef(null);
     const { currentColor, changeColorContext } = useContext(ColorContext);
+    const [displayText, setDisplayText] = useState(currentColor.text)
+    const [animateText, setAnimateText] = useState(false);
     useEffect(() => {
         let rightElem = rightRef.current;
         let leftElem = leftRef.current;
         let textElem = textRef.current;
 
-        textElem.innerText = currentColor.text;
+
         rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;
         leftElem.style.backgroundColor = `rgba(${currentColor.rgbColor},0.4)`;
 
@@ -43,13 +45,35 @@ const ColorSection = ({ currentSection,scrollPercentage }) => {
             const colorIndex = currentSection - 8;
             const [colorHex, colorText, rgbColor] = colors[colorIndex];
             updateColor(colorHex, colorText, rgbColor);
+            if (currentSection === 8) {
+                setAnimateText(false);
+                setDisplayText(colorText);
+            } else {
+                setAnimateText(true);
+                setTimeout(() => {
+                    setAnimateText(false);
+                    setDisplayText(colorText);
+                }, 700);
+            }
         }
     }, [currentSection]);
+
+    useEffect(() => {
+        if (scrollPercentage >= 0.81) {
+            sectionRef.current.classList.add(styles.opacityTransition, styles.fadeOut);
+        } else {
+            sectionRef.current.classList.remove(styles.fadeOut);
+        }
+    }, [scrollPercentage]);
 
     return (
         <section className={styles.section} ref={sectionRef}>
             <div className={styles.left} ref={leftRef} />
-            <div className={styles.center} ref={textRef} />
+            <div className={styles.center}>
+                    <div className={` ${animateText ? styles.animatingText : ''}`}>
+                        {displayText}
+                    </div>
+            </div>
             <div className={styles.right} ref={rightRef} />
         </section>
     );

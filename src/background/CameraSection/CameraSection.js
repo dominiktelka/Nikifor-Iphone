@@ -12,7 +12,7 @@ const CameraSection = ({currentSectionNumber,scrollPercentage}) => {
   const videoRef2 = useRef(null);
   const titleRef = useRef(null);
     useEffect(() => {
-        if (scrollPercentage >= 0.866669) {
+        if (scrollPercentage >= 0.866669 && scrollPercentage < 0.933) {
             sectionRef.current.classList.add(styles.opacityTransition, styles.fadeOut);
         } else {
             sectionRef.current.classList.remove(styles.fadeOut);

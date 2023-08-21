@@ -18,7 +18,6 @@ import InteractionSection from "./InteractionSection/InteractionSection";
 
 export default function Background({calculateSectionRange, currentSectionNumber ,scrollPercentage, sectionsAmount,setRequestScrollToSection}) {
 
-console.log(scrollPercentage)
 
     const getOpacity = (scrollPercentage, startPercentage, endPercentage) => {
 
@@ -43,7 +42,7 @@ console.log(scrollPercentage)
             position: 'absolute',
         };
     });
-    console.log(scrollPercentage)
+
     return (
         <>
             {sectionStyles.map((style, index) => (
@@ -62,7 +61,7 @@ console.log(scrollPercentage)
                     <ColorSection currentSection={currentSectionNumber} scrollPercentage={scrollPercentage}/>
             </div>}
                 {currentSectionNumber === 14 && <CameraSection currentSectionNumber={currentSectionNumber} scrollPercentage={scrollPercentage}/>}
-                {currentSectionNumber === 15 &&<PricingSection currentSectionNumber={currentSectionNumber}/>}
+                {currentSectionNumber === 15 &&<PricingSection currentSectionNumber={currentSectionNumber} scrollPercentage={scrollPercentage}/>}
                 {currentSectionNumber === 16 && <InteractionSection scrollPercentage={scrollPercentage}/>}
             {currentSectionNumber === 16 ? (
                 ""
