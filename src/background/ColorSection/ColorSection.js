@@ -3,18 +3,18 @@ import styles from './colorSection.module.css';
 import {ColorContext} from "../ColorContex/ColorContext";
 
 const ColorSection = ({ currentSection,scrollPercentage }) => {
-console.log(scrollPercentage)
+
     const sectionRef = useRef(null);
     const rightRef = useRef(null);
     const leftRef = useRef(null);
-    const textRef = useRef(null);
     const { currentColor, changeColorContext } = useContext(ColorContext);
     const [displayText, setDisplayText] = useState(currentColor.text)
     const [animateText, setAnimateText] = useState(false);
+
     useEffect(() => {
         let rightElem = rightRef.current;
         let leftElem = leftRef.current;
-        let textElem = textRef.current;
+
 
 
         rightElem.style.backgroundColor = `rgba(${currentColor.rgbColor}, 0.8)`;

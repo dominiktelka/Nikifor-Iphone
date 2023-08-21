@@ -10,6 +10,7 @@ export default function LoadingUpdater({setIsLoading}) {
             setIsLoading(false)
         }
     }, [progress])
+    console.log(progress)
 
     return null;
 }
