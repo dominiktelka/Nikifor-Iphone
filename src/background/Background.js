@@ -8,7 +8,7 @@ import BatterySection from "./BatterySection/BatterySection";
 import PricingSection from "./PricingSection/PricingSection";
 import CameraSection from "./CameraSection/CameraSection";
 import ColorSection from "./ColorSection/ColorSection";
-import React, {useEffect, useState} from "react";
+import React from "react";
 import styles from './Background.module.css'
 import InteractionSection from "./InteractionSection/InteractionSection";
 
@@ -18,7 +18,7 @@ import InteractionSection from "./InteractionSection/InteractionSection";
 
 export default function Background({calculateSectionRange, currentSectionNumber ,scrollPercentage, sectionsAmount,setRequestScrollToSection}) {
 
-
+console.log(scrollPercentage)
 
     const getOpacity = (scrollPercentage, startPercentage, endPercentage) => {
 
@@ -61,7 +61,7 @@ export default function Background({calculateSectionRange, currentSectionNumber 
             {scrollPercentage >= 0.45 && currentSectionNumber <= 13 && <div className={styles.slideIn} >
                     <ColorSection currentSection={currentSectionNumber} scrollPercentage={scrollPercentage}/>
             </div>}
-                {currentSectionNumber === 14 && <CameraSection currentSectionNumber={currentSectionNumber} />}
+                {currentSectionNumber === 14 && <CameraSection currentSectionNumber={currentSectionNumber} scrollPercentage={scrollPercentage}/>}
                 {currentSectionNumber === 15 &&<PricingSection currentSectionNumber={currentSectionNumber}/>}
                 {currentSectionNumber === 16 && <InteractionSection scrollPercentage={scrollPercentage}/>}
             {currentSectionNumber === 16 ? (

@@ -5,6 +5,15 @@
     background-color: black;
     overflow: hidden;
 }
+
+.opacityTransition {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.opacityTransition.fadeOut {
+    opacity: 0;
+}
 .v1{
     position: fixed;
     object-fit: cover;
