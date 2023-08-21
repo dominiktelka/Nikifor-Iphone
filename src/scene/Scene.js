@@ -5,15 +5,15 @@ import { Model } from "./Model";
 import { getProject } from "@theatre/core";
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from "@theatre/r3f";
 import * as THREE from "three";
-import latest from './latest.json'
-import mobileAnimation from './mobileAnimation.json'
+import latest2 from './latest2.json'
+import mobileAnimation2 from './mobileAnimation2.json'
 import studio from "@theatre/studio";
 import extension from "@theatre/r3f/dist/extension";
 import {ColorContext} from "../background/ColorContex/ColorContext";
 
 // studio.initialize()
 // studio.extend(extension)
-// const demoSheet = getProject('Demo Project').sheet('Demo Sheet')
+// const demoSheet = getProject('Demo Project', {state: mobileAnimation}).sheet('Demo Sheet')
 // gl={{preserveDrawingBuffer:true}}
 //
 
@@ -33,24 +33,25 @@ const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSection
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const demoSheet = getProject("Demo Project", { state: isMobile ? mobileAnimation : latest }).sheet("Demo Sheet");
+    const demoSheet = getProject("Demo Project", { state: isMobile ? mobileAnimation2 : latest2 }).sheet("Demo Sheet");
 
-    // const canvasProps = isInteractive
-    //     ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
-    //     : { camera: { fov: 60 } };
+    const canvasProps = isInteractive
+        ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }
+        : { camera: { fov: 60 } };
 
     const sectionsVisible = [1, 2, 3, 4, 5, 6,7,15,16].includes(currentSectionNumber);
     const sparklesColor = `rgba(${currentColor.rgbColor}, 1)`;
 
     return (
         <>
-            <Canvas >
+            <Canvas>
                 <ambientLight intensity={1} />
                 <Environment preset="warehouse" />
                 {sectionsVisible ?
                     (<Float>
-                        <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
-                    </Float>) :
+                            <Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
+                        </Float>
+                    ) :
                     (<Model isInteractive={isInteractive} nodes={nodes} materials={materials}/>
                     )}
                 { sectionsVisible ? <Sparkles

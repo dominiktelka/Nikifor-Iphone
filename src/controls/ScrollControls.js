@@ -1,12 +1,13 @@
 import styles from './ScrollControls.module.css'
 import {useEffect, useRef} from "react";
+import interactionSection from "../background/InteractionSection/InteractionSection";
 
 export default function ScrollControls({sectionsAmount, requestScrollToSection, setRequestScrollToSection, setScrollPercentage}) {
 
     const mainContainerRef = useRef()
 
     useEffect(() => {
-        if (requestScrollToSection) {
+        if (requestScrollToSection !== null) {
             mainContainerRef.current.children.item(requestScrollToSection).scrollIntoView({behavior: 'smooth'})
             setRequestScrollToSection(null)
         }
@@ -20,7 +21,9 @@ export default function ScrollControls({sectionsAmount, requestScrollToSection, 
 
     return (
         <div className={styles.mainContainer} ref={mainContainerRef} onScroll={handleScroll}>
-            {Array(sectionsAmount).fill().map(_ => <div className={styles.section}/>)}
+            {Array.from({ length: sectionsAmount }, (_, index) => (
+                <div className={styles.section} key={index} />
+            ))}
         </div>
     )
 }
