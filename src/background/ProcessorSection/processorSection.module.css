@@ -1,12 +1,13 @@
 .section{
     width:100vw;
     height:100svh;
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     color: white;
     overflow: hidden;
+    top: 0;
 }
 .section h1{
     width: 100%;
@@ -173,7 +174,7 @@
         bottom: -3svh;
     }
     .imgContainer{
-        width:55%;
+        width:45%;
         position: absolute;
         top: 58%;
         left:50%;
@@ -213,6 +214,7 @@
         /*margin: 5px;*/
         box-shadow: 0 0 10px white;
         align-items: center;
+        font-size: 9px;
     }
     .text span:nth-child(1) {
         position: absolute;
@@ -240,10 +242,10 @@
     }
     .section h1{
         font-size: 48px;
-        bottom: -3svh;
+        bottom: 3svh;
     }
     .imgContainer{
-        width:65%;
+        width:45%;
         position: absolute;
         top: 60%;
         left:50%;
@@ -313,7 +315,7 @@
         bottom: -3svh;
     }
     .imgContainer{
-        width:65%;
+        width:25%;
         position: absolute;
         top: 60%;
         left:50%;

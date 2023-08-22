@@ -1,4 +1,7 @@
+
 .textContainer{
+    position: absolute;
+    top: 0;
     width:100%;
     height: 50svh;
     display: flex;
@@ -21,38 +24,31 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 2;
-    animation: moveUp 1s ease;
+
 }
-@keyframes moveUp {
-    from{
-        transform: translateY(100svh);
-    }
-    to{
-        transform: translateY(0svh);
-    }
-}
+
 .textContainer2{
+    position: absolute;
     width:100%;
     height: 50svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    transform: translateY(0);
+    bottom: -30svh;
 }
 .textContainer2 span{
     position: absolute;
+    top: 0;
     font-size: 30px;
     width:100%;
     font-weight: 600;
     text-transform: capitalize;
     align-self: flex-end;
     text-align: right;
-    bottom: 8svh;
     padding: 0 3vw;
     /*animation-fill-mode: forwards;*/
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: moveUp 1s ease;
 }

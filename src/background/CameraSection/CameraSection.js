@@ -1,36 +1,58 @@
-import React, {useEffect} from "react";
-import { useRef } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./cameraSection.module.css";
 import v1 from "../../video/Scuba Diving - 699.mp4";
 import v2 from '../../video/Skate - 49791.mp4';
 
 
 const CameraSection = ({currentSectionNumber,scrollPercentage}) => {
-  const sectionRef = useRef(null);
 
-  const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
-  const titleRef = useRef(null);
+    const [opacity, setOpacity] = useState(0)
     useEffect(() => {
-        if (scrollPercentage >= 0.866669 && scrollPercentage < 0.933) {
-            sectionRef.current.classList.add(styles.opacityTransition, styles.fadeOut);
-        } else {
-            sectionRef.current.classList.remove(styles.fadeOut);
-        }
-    }, [scrollPercentage]);
 
+        const getOpacityGrowing = () => {
+
+            const opacityMinimal = 0
+            const opacityMaximal = 1
+            const opacityStart = 12.4 / 15
+            const opacityEnd = 13 / 15
+
+            if (scrollPercentage < opacityStart) return opacityMinimal
+            if (scrollPercentage > opacityEnd) return opacityMaximal
+
+            return opacityMinimal + (((scrollPercentage - opacityStart) / (opacityEnd - opacityStart))) * (opacityMaximal - opacityMinimal)
+        }
+
+        const getOpacityShrinking = () => {
+
+            const opacityMinimal = 0
+            const opacityMaximal = 1
+            const opacityStart = 13 / 15
+            const opacityEnd = 13.8 / 15
+
+
+            if (scrollPercentage > opacityEnd) return opacityMinimal
+
+            return opacityMinimal + (1 - ((scrollPercentage - opacityStart) / (opacityEnd - opacityStart))) * (opacityMaximal - opacityMinimal)
+        }
+
+        if (scrollPercentage < 13 / 15) {
+            setOpacity(getOpacityGrowing());
+        } else{
+            setOpacity((getOpacityShrinking()))
+        }
+
+
+    }, [scrollPercentage])
 
 
     return (
-    <section className={styles.section} ref={sectionRef}>
-      <video className={currentSectionNumber === 14 ? `${styles.v1} ${styles.animation2}` : ''} ref={videoRef1} src={v1}  autoPlay muted loop playsInline/>
-      <video className={currentSectionNumber === 14 ? `${styles.v2} ${styles.animation3}` : ''} ref={videoRef2} src={v2}  autoPlay muted loop playsInline/>
-      <div className={styles.titleContainer} ref={titleRef}>
-        <span className={currentSectionNumber === 14 ? `${styles.span} ${styles.animation}` : ''}>Ready.</span>
-        <span className={currentSectionNumber === 14 ? `${styles.span} ${styles.animation}` : ''}>Steady.</span>
-        <span className={currentSectionNumber === 14 ? `${styles.span} ${styles.animation}` : ''}>Action.</span>
-      </div>
-    </section>
+        <section className={styles.section}  style={{opacity:opacity}}>
+            <video className={styles.v1}  src={v1}  autoPlay muted loop playsInline/>
+            <video className={styles.v2}   src={v2}  autoPlay muted loop playsInline/>
+            <div className={styles.titleContainer} >
+                <span className={styles.span}>Cinematic mode now lets you shoot in 4K HDR at 24 fps — the film industry standard.</span>
+            </div>
+        </section>
   );
 };
 

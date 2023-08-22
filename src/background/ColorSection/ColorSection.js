@@ -4,6 +4,48 @@ import {ColorContext} from "../ColorContex/ColorContext";
 
 const ColorSection = ({ currentSection,scrollPercentage }) => {
 
+    const [opacity, setOpacity] = useState(0)
+    useEffect(() => {
+
+        const getOpacityGrowing = () => {
+
+            const opacityMinimal = 0
+            const opacityMaximal = 1
+            const opacityStart = 6.5 / 15
+            const opacityEnd = 7 / 15
+
+            if (scrollPercentage < opacityStart) return opacityMinimal
+            if (scrollPercentage > opacityEnd) return opacityMaximal
+
+            return opacityMinimal + (((scrollPercentage - opacityStart) / (opacityEnd - opacityStart))) * (opacityMaximal - opacityMinimal)
+        }
+
+        const getOpacityShrinking = () => {
+
+            const opacityMinimal = 0
+            const opacityMaximal = 1
+            const opacityStart = 12 / 15
+            const opacityEnd = 12.6 / 15
+
+
+            if (scrollPercentage > opacityEnd) return opacityMinimal
+
+            return opacityMinimal + (1 - ((scrollPercentage - opacityStart) / (opacityEnd - opacityStart))) * (opacityMaximal - opacityMinimal)
+        }
+
+        if (scrollPercentage < 7 / 15) {
+            setOpacity(getOpacityGrowing());
+        } else if (scrollPercentage >= 8/15 && scrollPercentage <= 12/15) {
+            setOpacity(1);
+        } else if(scrollPercentage < 13 / 15){
+            setOpacity((getOpacityShrinking()))
+        }else{
+            setOpacity(0)
+        }
+
+
+    }, [scrollPercentage])
+
     const sectionRef = useRef(null);
     const rightRef = useRef(null);
     const leftRef = useRef(null);
@@ -58,16 +100,10 @@ const ColorSection = ({ currentSection,scrollPercentage }) => {
         }
     }, [currentSection]);
 
-    useEffect(() => {
-        if (scrollPercentage >= 0.81) {
-            sectionRef.current.classList.add(styles.opacityTransition, styles.fadeOut);
-        } else {
-            sectionRef.current.classList.remove(styles.fadeOut);
-        }
-    }, [scrollPercentage]);
+
 
     return (
-        <section className={styles.section} ref={sectionRef}>
+        <section className={styles.section} ref={sectionRef} style={{opacity: opacity}}>
             <div className={styles.left} ref={leftRef} />
             <div className={styles.center}>
                     <div className={` ${animateText ? styles.animatingText : ''}`}>

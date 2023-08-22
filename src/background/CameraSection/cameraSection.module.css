@@ -1,213 +1,149 @@
 .section{
     width: 100vw;
     min-height: 100svh;
-    position: relative;
-    background-color: black;
+    position: absolute;
+    background-color: transparent;
     overflow: hidden;
+    top: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.opacityTransition {
-    opacity: 1;
-    transition: opacity 1s ease;
-}
 
-.opacityTransition.fadeOut {
-    opacity: 0;
-}
 .v1{
-    position: fixed;
+    width: 50svw;
+    height: 50svh;
+    position: absolute;
     object-fit: cover;
     object-position: bottom;
+    pointer-events: none;
 }
 .v2{
-    position: fixed;
+    width: 50svw;
+    height: 50svh;
+    position: absolute;
     bottom: 0;
     right: 0;
     object-fit: cover;
     object-position: bottom;
+    pointer-events: none;
 }
 .titleContainer {
     width: 50%;
     height: 50svh;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     position: absolute;
-    right: -50vw;
-    top: 12vh;
+    right: 0;
+    top: 0;
     pointer-events: none;
+    color: whitesmoke;
+    text-align: center;
 }
 .span{
-    font-size: 50px;
+    font-size: 28px;
     text-transform: capitalize;
     animation-fill-mode: forwards;
     letter-spacing: 2px;
+    display: flex;
 }
-.span:nth-child(2){
-    margin: 2svh 0;
-}
-@keyframes fadeInAnimation {
-    0% {
-        transform: translateX(0) scale(1);
-    }
-    100% {
-        transform: translateX(-20vw) scale(1.6);
-        color: whitesmoke;
-    }
-}
-@keyframes fadeInAnimation2 {
-    0% {
-        transform: translate(-100%,-100%) scale(3) ;
-        width: 100%;
-        height: 100svh;
+
+
+@media  (min-width: 280px) and (max-width: 340px) {
+    .v1{
+        width: 100svw;
+        height: 30svh;
         z-index: 2;
         pointer-events: none;
-
-
     }
-    65%{
-        z-index: 1;
+    .v2{
+        width: 100svw;
+        height: 30svh;
+        z-index: 2;
+        pointer-events: none;
     }
-    100% {
-        transform: translateX(0) ;
-        width: 50%;
-        height: 50svh;
-        z-index: 0;
+    .titleContainer{
+        height: 40svh;
+        width: 100svw;
+        color: whitesmoke;
+        left: 0;
+        top: 30svh;
+        display: flex;
+        flex-direction: column;
     }
-}
-@keyframes fadeInAnimation3 {
-    0% {
-        transform: translate(100%,100%) scale(3) ;
-        width: 0;
-        height: 0;
-
-    }
-    100% {
-        transform: translateX(0) ;
-        width: 50%;
-        height: 50svh;
-    }
-}
-.animation2{
-    animation: fadeInAnimation2 2s 1;
-    animation-fill-mode: forwards;
-}
-.animation3{
-    animation: fadeInAnimation3 2s 1;
-    animation-fill-mode: forwards;
-}
-.animation{
-    animation: fadeInAnimation 2s 1;
-    animation-fill-mode: forwards;
-
-}
-.span:nth-child(1){
-    animation-delay: 0.5s;
-}
-.span:nth-child(2){
-    animation-delay: 1s;
-}
-.span:nth-child(3) {
-    animation-delay: 1.5s;
-}
-@media  (min-width: 280px) and (max-width: 340px) {
-    @keyframes fadeInAnimation2 {
-        0% {
-            transform: translate(-100%,-100%) scale(3) ;
-            width: 100%;
-            height: 100svh;
-            z-index: 2;
-        }
-        65%{
-            z-index: 1;
-        }
-        100% {
-            transform: translate(27vw,-6svh) scale(0.6);
-            width: 50%;
-            height: 50svh;
-            z-index: 0;
-        }
-    }
-    @keyframes fadeInAnimation3 {
-        0% {
-            transform: translate(100%,100%) scale(3) ;
-            width: 0;
-            height: 0;
-
-        }
-        100% {
-            transform: translate(0vw,-40vh) scale(0.7) ;
-            width: 100%;
-            height: 30svh;
-        }
-    }
-    @keyframes fadeInAnimation {
-        0% {
-            transform: translate(-100vw,100vh) scale(1);
-
-
-        }
-        100% {
-            transform: translate(-85vw,50svh) scale(1.4);
-            z-index: 1;
-            color: whitesmoke;
-        }
-    }
-    .span{
+    .span {
         font-size: 40px;
+        text-align: center;
         text-transform: capitalize;
         animation-fill-mode: forwards;
     }
+
 }
-@media  (min-width: 341px) and (max-width: 768px) {
+@media  (min-width: 341px) and (max-width: 400px) {
 
-    @keyframes fadeInAnimation2 {
-        0% {
-            transform: translate(-100%,-100%) scale(3) ;
-            width: 100%;
-            height: 100vh;
-            z-index: 2;
-
-
-        }
-        65%{
-            z-index: 1;
-        }
-        100% {
-            transform: translate(27vw,-6svh) scale(0.6);
-            width: 50%;
-            height: 50svh;
-            z-index: 0;
-        }
+    .v1{
+        width: 100svw;
+        height: 30svh;
+        z-index: 2;
+        pointer-events: none;
     }
-    @keyframes fadeInAnimation3 {
-        0% {
-            transform: translate(100%,100%) scale(3) ;
-            width: 0;
-            height: 0;
-
-        }
-        100% {
-            transform: translate(0vw,-40svh) scale(0.7) ;
-            width: 100%;
-            height: 30svh;
-        }
+    .v2{
+        width: 100svw;
+        height: 30svh;
+        z-index: 2;
+        pointer-events: none;
     }
-    @keyframes fadeInAnimation {
-        0% {
-            transform: translate(-100vw,100svh) scale(1);
-            color: whitesmoke;
-
-        }
-        100% {
-            transform: translate(-85vw,50svh) scale(1.4);
-            color: whitesmoke;
-            z-index: 1;
-
-        }
+    .titleContainer{
+        height: 40svh;
+        width: 100svw;
+        color: whitesmoke;
+        left: 0;
+        top: 30svh;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
     }
-    .span{
+    .span {
         font-size: 40px;
+        text-align: center;
         text-transform: capitalize;
         animation-fill-mode: forwards;
+        z-index: 2;
+
+    }
+}
+
+@media  (min-width: 401px) and (max-width: 768px) {
+
+    .v1{
+        width: 100svw;
+        height: 30svh;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .v2{
+        width: 100svw;
+        height: 30svh;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .titleContainer{
+        height: 40svh;
+        width: 100svw;
+        color: whitesmoke;
+        left: 0;
+        top: 30svh;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    .span {
+        font-size: 40px;
+        text-align: center;
+        text-transform: capitalize;
+        animation-fill-mode: forwards;
+        z-index: 2;
+
     }
 }

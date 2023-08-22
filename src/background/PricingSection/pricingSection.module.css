@@ -1,15 +1,10 @@
 .pricingSection{
      width: 100vw;
      height: 100svh;
+    position: absolute;
+    top: 0;
  }
-.opacityTransition {
-    opacity: 1;
-    transition: opacity 1s ease;
-}
 
-.opacityTransition.fadeOut {
-    opacity: 0;
-}
 .Colors{
     display: flex;
     flex-direction: column;
@@ -65,18 +60,7 @@
     z-index: 2;
     user-select: none;
 }
- .animationMoveDown{
-     animation: moveDown 0.5s 1;
-     animation-fill-mode: forwards;
- }
- @keyframes moveDown {
-     0%{
-         transform: translateY(-50vh);
-     }
-     100%{
-         transform: translateY(0vh);
-     }
- }
+
 .subtitle {
     font-size: 40px;
     color: whitesmoke;
@@ -155,5 +139,7 @@
 
 }
 @media (min-width: 768px) {
-
+    .Colors{
+        left: 30svw;
+    }
 }

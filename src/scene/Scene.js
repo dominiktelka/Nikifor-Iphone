@@ -6,14 +6,14 @@ import { getProject } from "@theatre/core";
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from "@theatre/r3f";
 import * as THREE from "three";
 import latest3 from './latest3.json'
-import mobileAnimation2 from './mobileAnimation2.json'
+import mobileAnimation3 from './mobileAnimation3.json'
 import studio from "@theatre/studio";
 import extension from "@theatre/r3f/dist/extension";
 import {ColorContext} from "../background/ColorContex/ColorContext";
 
 // studio.initialize()
 // studio.extend(extension)
-// const demoSheet = getProject('Demo Project', {state: latest2}).sheet('Demo Sheet')
+// const demoSheet = getProject('Demo Project', {state: mobileAnimation2}).sheet('Demo Sheet')
 // gl={{preserveDrawingBuffer:true}}
 //
 
@@ -33,7 +33,7 @@ const Scene = ({ scrollPercentage, isInteractive,nodes, materials,currentSection
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const demoSheet = getProject("Demo Project", { state: isMobile ? mobileAnimation2 : latest3 }).sheet("Demo Sheet");
+    const demoSheet = getProject("Demo Project", { state: isMobile ? mobileAnimation3 : latest3 }).sheet("Demo Sheet");
 
     // const canvasProps = isInteractive
     //     ? { gl: { preserveDrawingBuffer: true, outputEncoding: THREE.sRGBEncoding } }

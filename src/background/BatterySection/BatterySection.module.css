@@ -1,25 +1,19 @@
 .section {
     width: 100vw;
     height: 100svh;
-    position: relative;
+    position: absolute;
     overflow: hidden; /* Dodajemy overflow: hidden, aby bateria nie wychodziła poza sekcję */
-}
-.animation{
-    animation: moveUp 1s  ease;
-    animation-fill-mode: forwards;
-}
-.animationMoveLeft{
-    animation: moveLeft 1s  ease;
-    animation-fill-mode: forwards;
+    top: 0;
 }
 .batteryH1{
     position: absolute;
-    top: 35vh;
+    top: 20svh;
     left: 40vw;
     text-transform: capitalize;
     font-size: 70px;
     color: lightgray;
     width: 30vw;
+    z-index: 2;
 }
 .battery{
     position: absolute;
@@ -47,46 +41,15 @@
     background-color: black;
     background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
     border-radius: 20px;
-}
-@keyframes moveUp {
-    0%{
-        transform: translateY(50svh);
-    }
-    100%{
-        transform: translateY(-15svh);
-    }
-}
-@keyframes moveLeft {
-    0%{
-        transform: translateX(50svh);
-    }
-    100%{
-        transform: translateX(-15svh);
-    }
-}
-@keyframes fadeIn {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    opacity: 1;
 }
 
+
 @media  (min-width: 280px)and (max-width: 320px) {
-    @keyframes moveLeft {
-        0% {
-            transform: translate(0, 200svh) ;
-        }
-        100% {
-            transform:  rotate(90deg)scale(0.6);
-        }
-    }
+
     .batteryH1{
         position: absolute;
-        top: 15svh;
+        top: 5svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -101,7 +64,8 @@
         border-radius: 20px;
         width: 13rem;
         top:50svh;
-        left: 15%;
+        left: 16svw;
+        transform: rotate(90deg) scale(0.6);
     }
 
     .battery li.active{
@@ -114,17 +78,9 @@
     }
 }
 @media  (min-width: 321px)and (max-width: 350px) {
-    @keyframes moveLeft {
-        0% {
-            transform: translate(0, 200svh) ;
-        }
-        100% {
-            transform:  rotate(90deg)scale(0.7);
-        }
-    }
     .batteryH1{
         position: absolute;
-        top: 15svh;
+        top: 5svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -140,6 +96,7 @@
         width: 13rem;
         top:50svh;
         left: 23%;
+        transform: rotate(90deg) scale(0.6);
     }
 
     .battery li.active{
@@ -152,17 +109,10 @@
     }
 }
 @media  (min-width: 351px)and (max-width: 380px) {
-    @keyframes moveLeft {
-        0% {
-            transform: translate(0, 200svh) ;
-        }
-        100% {
-            transform:  rotate(90deg)scale(0.7);
-        }
-    }
+
     .batteryH1{
         position: absolute;
-        top: 15svh;
+        top: 5svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -178,6 +128,7 @@
         width: 13rem;
         top:50svh;
         left: 23%;
+        transform: rotate(90deg) scale(0.6);
     }
 
     .battery li.active{
@@ -190,17 +141,10 @@
     }
 }
 @media  (min-width: 381px)and (max-width: 400px) {
-    @keyframes moveLeft {
-        0% {
-            transform: translate(0, 200svh) ;
-        }
-        100% {
-            transform:  rotate(90deg)scale(0.8);
-        }
-    }
+
     .batteryH1{
         position: absolute;
-        top: 15svh;
+        top: 5svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -214,8 +158,9 @@
         border: 3px solid black;
         border-radius: 20px;
         width: 13rem;
-        top:57svh;
+        top:50svh;
         left: 25%;
+        transform: rotate(90deg) scale(0.6);
     }
 
     .battery li.active{
@@ -228,17 +173,10 @@
     }
 }
 @media  (min-width: 401px)and (max-width: 420px) {
-    @keyframes moveLeft {
-        0% {
-            transform: translate(0, 200svh) ;
-        }
-        100% {
-            transform:  rotate(90deg)scale(0.8);
-        }
-    }
+
     .batteryH1{
         position: absolute;
-        top: 15svh;
+        top: 5svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -252,31 +190,25 @@
         border: 3px solid black;
         border-radius: 20px;
         width: 13rem;
-        top:57svh;
+        top:60svh;
         left: 27%;
+        transform: rotate(90deg) scale(0.85);
     }
 
     .battery li.active{
         animation: fadeIn infinite linear forwards;
         width: 100%;
         height: 5rem;
-        background-color: black;
         background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
         border-radius: 10px;
+        opacity: 1;
+
     }
 }
 @media  (min-width: 421px)and (max-width: 768px) {
-    @keyframes moveLeft {
-        0% {
-            transform: translate(0, 200svh) ;
-        }
-        100% {
-            transform:  rotate(90deg)scale(0.8);
-        }
-    }
     .batteryH1{
         position: absolute;
-        top: 15svh;
+        top: 5svh;
         left: 2vw;
         text-transform: capitalize;
         font-size: 30px;
@@ -290,38 +222,48 @@
         border: 3px solid black;
         border-radius: 20px;
         width: 13rem;
-        top:57svh;
-        left: 23%;
+        top:45svh;
+        left: 37svw;
+        transform: rotate(90deg) scale(0.85);
     }
 
     .battery li.active{
         animation: fadeIn infinite linear forwards;
         width: 100%;
         height: 5rem;
-        background-color: black;
         background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
         border-radius: 10px;
+        opacity: 1;
+
     }
 }
-@media (min-width: 767px){
+@media  (min-width: 769px){
+    .batteryH1{
+        width: 40svw;
+        font-size: 60px;
+        left:35svw;
 
+    }
     .battery{
         list-style: none;
         position: absolute;
         border: 3px solid black;
         border-radius: 20px;
         width: 13rem;
-        top:20svh;
+        top:18svh;
+        right: 10svw;
     }
 
     .battery li.active{
         animation: fadeIn infinite linear forwards;
         width: 100%;
         height: 5rem;
-        background-color: black;
         background-image: linear-gradient(-45deg, #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%);
         border-radius: 10px;
+        opacity: 1;
+
     }
 }
+
 
 

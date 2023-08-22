@@ -1,10 +1,10 @@
-import React, {useContext, useEffect, useRef} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import styles from "./pricingSection.module.css";
 import {ColorContext} from "../ColorContex/ColorContext";
 
 
 const PricingSection = ({currentSectionNumber,scrollPercentage}) => {
-    const divRef = useRef(null);
+
     const {changeColorContext } = useContext(ColorContext);
 
 
@@ -16,19 +16,51 @@ const PricingSection = ({currentSectionNumber,scrollPercentage}) => {
         };
         changeColorContext(colorObj);
     };
-    useEffect(() => {
-        if (scrollPercentage >= 0.934) {
-            divRef.current.classList.add(styles.opacityTransition, styles.fadeOut);
-        } else {
-            divRef.current.classList.remove(styles.fadeOut);
-        }
-    }, [scrollPercentage]);
+
     const handleBuyClick = () => {
         window.location.href = 'https://www.apple.com/pl/shop/buy-iphone/iphone-14-pro';
     };
 
+    const [opacity, setOpacity] = useState(0)
+    useEffect(() => {
+
+        const getOpacityGrowing = () => {
+
+            const opacityMinimal = 0
+            const opacityMaximal = 1
+            const opacityStart = 13.7 / 15
+            const opacityEnd = 14.5 / 15
+
+            if (scrollPercentage < opacityStart) return opacityMinimal
+            if (scrollPercentage > opacityEnd) return opacityMaximal
+
+            return opacityMinimal + (((scrollPercentage - opacityStart) / (opacityEnd - opacityStart))) * (opacityMaximal - opacityMinimal)
+        }
+
+        const getOpacityShrinking = () => {
+
+            const opacityMinimal = 0
+            const opacityMaximal = 1
+            const opacityStart = 14.5 / 15
+            const opacityEnd = 14.8 / 15
+
+
+            if (scrollPercentage > opacityEnd) return opacityMinimal
+
+            return opacityMinimal + (1 - ((scrollPercentage - opacityStart) / (opacityEnd - opacityStart))) * (opacityMaximal - opacityMinimal)
+        }
+
+        if (scrollPercentage < 14 / 15) {
+            setOpacity(getOpacityGrowing());
+        } else{
+            setOpacity((getOpacityShrinking()))
+        }
+
+
+    }, [scrollPercentage])
+
     return (
-            <div className={styles.pricingSection} ref={divRef}>
+            <div className={styles.pricingSection} style={{opacity:opacity}}>
                     <ul className={styles.Colors}>
                         <button className={styles.colorButton} onClick={() => updateColor("#9BB5CE", "Sierra Blue", "155, 181, 206")}/>
                         <button className={styles.colorButton} onClick={() => updateColor("#e0ca9b", "Gold", "249, 229, 201")}/>
@@ -38,7 +70,7 @@ const PricingSection = ({currentSectionNumber,scrollPercentage}) => {
                         <button className={styles.colorButton} onClick={() => updateColor("#215E7C", "Blue", "33, 94, 124")}/>
                     </ul>
 
-                <div className={currentSectionNumber === 15 ? `${styles.details} ${styles.animationMoveDown}`: '' }>
+                <div className={styles.details}>
                     <h2 className={styles.subtitle}>iPhone</h2>
                     <h2 className={styles.subtitle}>14 Pro Max</h2>
                     <h2 className={styles.subtitle}>From $1099</h2>
